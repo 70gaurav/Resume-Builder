@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.create-new{
+  border: 1px solid #c5c1c1;
+  padding: 1rem;
+  width: 150px;
+  height: 150px;
+  margin: 2rem;
+}
+.appear-here{
+  text-align: center;
+  margin: 5rem 0;
+}
+.my-resume{
+  margin: 0 3.35rem;
+}

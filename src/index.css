@@ -3,12 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+ul{
+  list-style: none;
+}
 .create-new{
   border: 1px solid #c5c1c1;
   padding: 1rem;
   width: 150px;
   height: 150px;
   margin: 2rem;
+  cursor: pointer;
 }
 .appear-here{
   text-align: center;
@@ -16,4 +20,23 @@
 }
 .my-resume{
   margin: 0 3.35rem;
+}
+.format ul li a{
+display: inline-block;
+margin: 1rem 0;
+width: 100%;
+padding: 1rem 0;
+text-decoration: none;
+color: #fff;
+background-color: #c5c1c1;
+}
+.format{
+  border: 2px solid black;
+  width: 25%;
+  height: 100vh;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: ;
 }

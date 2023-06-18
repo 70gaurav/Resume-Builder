@@ -8,48 +8,57 @@ import Achievements from "./Format/Achievements"
 import About from "./Format/About"
 
 function Format() {
-  const [option , selectedOption] = useState(null)
+  const [option, selectedOption] = useState(null)
   console.log(option)
 
-  // const renderComponent = () => {
-  //   switch (selectedOption){
-  //     case "My Details" : 
-  //     return <Mydetails/>;
-  //     case "About Me" : 
-  //     return <About />;
-  //     case "Skills & Proficiencies" : 
-  //     return <Skills />;
-  //     case "Work Experience" : 
-  //     return <Experience />;
-  //     case "Educational Background" : 
-  //     return <Education />;
-  //     case "Achievements" : 
-  //     return <Achievements />;
-  //     default : 
-  //     return null;
-  //   }
-  // }
-  return (
-  <>
-    <div className='format'>
-        <div>
-            <Link to={"/"}>Back</Link>
-            <h1>RESUME BUILDER</h1>
-        </div>
-        <div>
-            <ul>
-                <li><a href="" onClick={(e) => {e.preventDefault() ; selectedOption("My Details");renderComponent()}}>My Details</a></li>
-                <li><a href="" onClick={(e) => {e.preventDefault() ; selectedOption("About Me");renderComponent()}}>About Me</a></li>
-                <li><a href="" onClick={(e) => {e.preventDefault() ; selectedOption("Skills & Proficiencies");renderComponent()}}>Skills & Proficiencies</a></li>
-                <li><a href="" onClick={(e) => {e.preventDefault() ; selectedOption("Work Experience");renderComponent()}}>Work Experience</a></li>
-                <li><a href="" onClick={(e) => {e.preventDefault() ; selectedOption("Educational Background");renderComponent()}}>Educational Background</a></li>
-                <li><a href="" onClick={(e) => {e.preventDefault() ; selectedOption("Achievements");renderComponent()}}>Achievements</a></li>
-                {/* <li><a href="" onClick={(e) => {e.preventDefault() ; selectedOption(7);renderComponent()}}>Memberships</a></li> */}
-            </ul>
-        </div>
+    const renderComponent = () => {
+      switch (option){
+        case "My Details" : 
+        return <Mydetails />;
+        case "About Me" : 
+        return <About />;
+        case "Skills & Proficiencies" : 
+        return <Skills />;
+        case "Work Experience" : 
+        return <Experience />;
+        case "Educational Background" : 
+        return <Education />;
+        case "Achievements" : 
+        return <Achievements />;
+        default : 
+        return "select a section to edit";
+      }
+    }
+  
 
+  return (
+    <div className='format'>
+      <div className='sidebar'>
+        <div>
+          <Link to={"/"}>Back</Link>
+          <h1>RESUME BUILDER</h1>
+        </div>
+        <div>
+          <ul>
+            <li><a href="" onClick={(e) => { e.preventDefault(); selectedOption("My Details") }}>My Details</a></li>
+            <li><a href="" onClick={(e) => { e.preventDefault(); selectedOption("About Me") }}>About Me</a></li>
+            <li><a href="" onClick={(e) => { e.preventDefault(); selectedOption("Skills & Proficiencies") }}>Skills & Proficiencies</a></li>
+            <li><a href="" onClick={(e) => { e.preventDefault(); selectedOption("Work Experience") }}>Work Experience</a></li>
+            <li><a href="" onClick={(e) => { e.preventDefault(); selectedOption("Educational Background") }}>Educational Background</a></li>
+            <li><a href="" onClick={(e) => { e.preventDefault(); selectedOption("Achievements") }}>Achievements</a></li>
+            {/* <li><a href="" onClick={(e) => {e.preventDefault() ; selectedOption(7);renderComponent()}}>Memberships</a></li> */}
+          </ul>
+        </div>
+     
+
+      </div>
+      <div className='section'>
+      {
+       renderComponent()
+
+        }
+      </div>
     </div>
-    </>
   )
 }
 

@@ -21,7 +21,7 @@ ul{
 .my-resume{
   margin: 0 3.35rem;
 }
-.format ul li a{
+.sidebar ul li a{
 display: inline-block;
 margin: 1rem 0;
 width: 100%;
@@ -30,13 +30,24 @@ text-decoration: none;
 color: #fff;
 background-color: #c5c1c1;
 }
-.format{
+.sidebar{
   border: 2px solid black;
-  width: 25%;
+  width: 20%;
   height: 100vh;
   font-size: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: ;
+}
+.format{
+  display: flex;
+  align-items: center;
+}
+.section{
+  height: 100vh;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
 }

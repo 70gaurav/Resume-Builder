@@ -45,9 +45,38 @@ background-color: #c5c1c1;
 }
 .section{
   height: 100vh;
-  width: 50vw;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px solid black;
+}
+form img{
+  display: block;
+  margin-right: 5rem;
+}
+.input{
+  margin: 2rem;
+}
+.input input{
+  width: 300px;
+  height: 50px;
+  margin-left: 20px ;
+  border-radius: 10px;
+}
+.input{
+  display: flex;
+  align-items: center;
+}
+.input h3 {
+  width: 20%;
+}
+.input:first-of-type{
+  flex-direction: column;
+  
+}
+.side-template{
+  border: 2px solid black;
+  height: 100vh;
+  width:30% ;
 }

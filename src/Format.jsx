@@ -6,6 +6,7 @@ import Experience from "./Format/Experience"
 import Skills from "./Format/Skills"
 import Achievements from "./Format/Achievements"
 import About from "./Format/About"
+import Template from './Template'
 
 function Format() {
   const [option, selectedOption] = useState(null)
@@ -57,6 +58,10 @@ function Format() {
        renderComponent()
 
         }
+      </div>
+      <div className='side-template'>
+        <Template/>
+
       </div>
     </div>
   )

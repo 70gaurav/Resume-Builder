@@ -1,21 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Mydetails() {
+  const [image , setImage] = useState("")
+
+  
+  function imageHandler (e) {
+
+    console.log(e.target.files)
+    setImage(URL.createObjectURL(e.target.files[0]))
+
+  }
+  
   return (
     <div>
       <a href="">Cancel</a>
       <a href="">Save</a>
        <form action="">
-      <div>
-      <label htmlFor="name">Name</label>
+        <div className='input'>
+          <img src={image} alt="" />
+          <input type="file" onChange={imageHandler} />
+        </div>
+      <div className='input'>
+      <h3>Name</h3>
         <input type="text" placeholder='Enter Your Name'/>
       </div>
-      <div>
-      <label htmlFor="Role">Role</label>
+      <div className='input'>
+      <h3>Role</h3>
         <input type="text" placeholder='Enter Your Job Role' /><br />
       </div>
-       <div>
-       <label htmlFor="experience">Experience</label>
+       <div className='input'>
+       <h3>Experience</h3>
         <input type="number" placeholder='Year' />
        </div>
       </form>

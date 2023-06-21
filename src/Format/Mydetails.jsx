@@ -1,16 +1,20 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { imageHandler } from '../slice/Resumeslice'
+
+
+
 
 function Mydetails() {
-  const [image , setImage] = useState("")
 
+
+const dispatch = useDispatch()
+const data = (state) => {
+  return state.details
+}
   
-  function imageHandler (e) {
+ 
 
-    console.log(e.target.files)
-    setImage(URL.createObjectURL(e.target.files[0]))
-
-  }
-  
   return (
     <div>
       <a href="">Cancel</a>

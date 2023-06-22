@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto Slab', serif;
 }
 ul{
   list-style: none;
@@ -11,8 +12,7 @@ ul{
   padding: 1rem;
   width: 150px;
   height: 150px;
-  margin: 2rem;
-  cursor: pointer;
+
 }
 .appear-here{
   text-align: center;
@@ -42,6 +42,9 @@ background-color: #c5c1c1;
 .format{
   display: flex;
   align-items: center;
+}
+.sidebar h1{
+  text-align: center;
 }
 .section{
   height: 100vh;
@@ -79,4 +82,11 @@ form img{
   border: 2px solid black;
   height: 100vh;
   width:30% ;
+}
+.create-new{
+  text-align: center;
+  margin: 2rem;
+}
+.plus{
+  margin: 2rem;
 }

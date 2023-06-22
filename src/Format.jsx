@@ -7,6 +7,7 @@ import Skills from "./Format/Skills"
 import Achievements from "./Format/Achievements"
 import About from "./Format/About"
 import Template from './Template'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function Format() {
   const [option, selectedOption] = useState(null)
@@ -36,7 +37,7 @@ function Format() {
     <div className='format'>
       <div className='sidebar'>
         <div>
-          <Link to={"/"}>Back</Link>
+          <Link to={"/"}><ArrowBackIcon fontSize='large'/></Link>
           <h1>RESUME BUILDER</h1>
         </div>
         <div>

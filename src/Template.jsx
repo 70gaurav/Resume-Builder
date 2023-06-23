@@ -1,11 +1,12 @@
 import React from 'react'
-import {  useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 function Template() {
 
-// const data = useSelector((state) => {
-//   return state.details.name
-// })
+const data = useSelector((state) => {
+  return state.details
+})
+console.log(data)
   return (
     <div className='template'>
         <div className="details">

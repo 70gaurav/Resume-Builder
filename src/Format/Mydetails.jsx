@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { imageHandler } from '../slice/detaisSlice'
+import { imageHandler, nameHandler } from '../slice/detaisSlice'
 
 
 
@@ -31,7 +31,7 @@ function Mydetails() {
         </div>
         <div className='input'>
           <h3>Name</h3>
-          <input type="text" placeholder='Enter Your Name' />
+          <input type="text" value={data.name} placeholder='Enter Your Name' onChange={(e)=> {dispatch(nameHandler(e.target.value))}} />
         </div>
         <div className='input'>
           <h3>Role</h3>

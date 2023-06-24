@@ -23,7 +23,7 @@ ul{
 }
 .sidebar ul li a{
 display: inline-block;
-margin: 1rem 0;
+margin: 0.5rem 0;
 width: 100%;
 padding: 1rem 0;
 text-decoration: none;
@@ -48,7 +48,7 @@ background-color: #c5c1c1;
 }
 .section{
   height: 100vh;
-  width: 50%;
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,7 +56,9 @@ background-color: #c5c1c1;
 }
 form img{
   display: block;
-  margin-right: 5rem;
+  border-radius: 50%;
+  height: 180px;
+  width: 180px;
 }
 .input{
   margin: 2rem;
@@ -81,7 +83,7 @@ form img{
 .side-template{
   border: 2px solid black;
   height: 100vh;
-  width:30% ;
+  width:40% ;
 }
 .create-new{
   text-align: center;
@@ -89,4 +91,39 @@ form img{
 }
 .plus{
   margin: 2rem;
+}
+.top a{
+  display: inline-block;
+  color: black;
+  border: 4px solid;
+  padding: 0.3rem 0.5rem;
+  margin-left:10px;
+  border-radius: 50%;
+}
+.anchors{
+  display: flex;
+  justify-content: space-between;
+}
+.anchors a{
+  text-decoration: none;
+  color: #fff;
+  padding: 0.5rem;
+  background-color: #c5c1c1;
+  border-radius: 10px;
+}
+.details{
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+
+}
+.details .image{
+  width: 150px;
+  height: 150px;
+  margin: 0.5rem;
+}
+.image img{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
 }

@@ -36,8 +36,8 @@ function Format() {
   return (
     <div className='format'>
       <div className='sidebar'>
-        <div>
-          <Link to={"/"}><ArrowBackIcon fontSize='large'/></Link>
+        <div className='top'>
+          <Link to={"/"} className='back'><ArrowBackIcon fontSize='large'/></Link>
           <h1>RESUME BUILDER</h1>
         </div>
         <div>

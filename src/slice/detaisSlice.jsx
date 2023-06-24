@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
+import dummy from "./images/dummy.png"
 
 export const detailSlice = createSlice({
     name : "details",
+
     initialState: {
-        image : "",
+        image : dummy,
         name : "Name",
-        role : "",
+        role : "Role",
         totalExperience : ""
 
     },

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { imageHandler, nameHandler } from '../slice/detaisSlice'
+import { imageHandler, nameHandler , roleHandler ,experienceHandler } from '../slice/detaisSlice'
 
 
 
@@ -14,32 +14,28 @@ function Mydetails() {
   })
   console.log(data)
 
-
-  // function handleChange(e) {
-  //   console.log(e.target.files);
-  //   dispatch(imageHandler(URL.createObjectURL(e.target.files[0])));
-  // }
-
   return (
     <div>
-      <a href="">Cancel</a>
+     <div className='anchors'>
+     <a href="">Cancel</a>
       <a href="">Save</a>
+     </div>
       <form action="">
         <div className='input'>
-          {/* <img src={data.image} alt="" /> */}
-          <input type="file"  />
+          <img src={data.image} alt="" />
+          <input type="file"  onChange={(e) => {dispatch(imageHandler((URL.createObjectURL(e.target.files[0]))))}}/>
         </div>
         <div className='input'>
           <h3>Name</h3>
-          <input type="text" value={data.name} placeholder='Enter Your Name' onChange={(e)=> {dispatch(nameHandler(e.target.value))}} />
+          <input type="text"  placeholder='Enter Your Name' onChange={(e)=> {dispatch(nameHandler(e.target.value))}} />
         </div>
         <div className='input'>
           <h3>Role</h3>
-          <input type="text" placeholder='Enter Your Job Role' /><br />
+          <input type="text" placeholder='Enter Your Job Role'  onChange={(e) => {dispatch(roleHandler(e.target.value))}}/><br />
         </div>
         <div className='input'>
           <h3>Experience</h3>
-          <input type="number" placeholder='Year' />
+          <input type="text" placeholder='Year' onChange={(e) => {dispatch(experienceHandler(e.target.value))}}/>
         </div>
       </form>
     </div>

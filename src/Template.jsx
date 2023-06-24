@@ -11,12 +11,12 @@ console.log(data)
     <div className='template'>
         <div className="details">
             <div className='image'>
-                <img src="" alt="" />
+                <img src={data.image} alt="" />
             </div>
             <div className='name'>
-                <h1></h1>
-                <h4>Role</h4>
-                <h4>Experience</h4>
+                <h1>{data.name}</h1>
+                <h4>{data.role}</h4>
+                <h4>Total-Experience:-{data.totalExperience}</h4>
             </div>
         </div>
 

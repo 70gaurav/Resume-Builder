@@ -4,6 +4,6 @@ import detailReducer from "../slice/detaisSlice"
 
 export default configureStore({
     reducer : {
-        detail : detailReducer
+        details : detailReducer
     }
 })

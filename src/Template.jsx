@@ -19,6 +19,20 @@ console.log(data)
                 <h4>Total-Experience:-{data.totalExperience}</h4>
             </div>
         </div>
+        <div className='section1'>
+        <div className='about'>
+          <h3>ABOUT ME</h3>
+          <div className='line'>
+            <div className='color'></div>
+          </div>
+        </div>
+        <div className='work-history'>
+          <h3>WORK HISTORY</h3>
+          <div className='line'>
+            <div className='color'></div>
+          </div>
+        </div>
+        </div>
 
     </div>
   )

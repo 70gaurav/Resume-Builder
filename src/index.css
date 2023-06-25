@@ -127,3 +127,20 @@ form img{
   width: 100%;
   border-radius: 50%;
 }
+.section1{
+  display: flex;
+  margin: 1rem;
+}
+.about , .work-history{
+  width: 50%;
+}
+.line{
+  width: 90%;
+  background-color: grey;
+  height: 2px;
+}
+.color{
+  width: 20%;
+  background-color: black;
+  height: 2px;
+}

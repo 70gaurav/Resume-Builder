@@ -1,45 +1,63 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { imageHandler, nameHandler , roleHandler ,experienceHandler } from '../slice/detaisSlice'
-
-
-
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import { imageHandler, nameHandler, roleHandler, experienceHandler, addRoleInput } from '../slice/detaisSlice';
 
 function Mydetails() {
-
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const data = useSelector((state) => {
-    return state.details
-  })
-  console.log(data)
+    return state.details;
+  });
+
+  console.log(data);
+
+  const handleAddRoleInput = () => {
+    dispatch(addRoleInput());
+  };
+
+  const handleRoleInputChange = (index, event) => {
+    const { value } = event.target;
+    dispatch(roleHandler({ index, value }));
+  };
 
   return (
     <div>
-     <div className='anchors'>
-     <a href="">Cancel</a>
-      <a href="">Save</a>
-     </div>
+      <div className="anchors">
+        <a href="">Cancel</a>
+        <a href="">Save</a>
+      </div>
       <form action="">
-        <div className='input'>
+        <div className="input">
           <img src={data.image} alt="" />
-          <input type="file"  onChange={(e) => {dispatch(imageHandler((URL.createObjectURL(e.target.files[0]))))}}/>
+          <input type="file" onChange={(e) => { dispatch(imageHandler(URL.createObjectURL(e.target.files[0]))); }} />
         </div>
-        <div className='input'>
+        <div className="input">
           <h3>Name</h3>
-          <input type="text"  placeholder='Enter Your Name' onChange={(e)=> {dispatch(nameHandler(e.target.value))}} />
+          <input type="text" placeholder="Enter Your Name" onChange={(e) => { dispatch(nameHandler(e.target.value)); }} />
         </div>
-        <div className='input'>
+        <div className="input">
           <h3>Role</h3>
-          <input type="text" placeholder='Enter Your Job Role'  onChange={(e) => {dispatch(roleHandler(e.target.value))}}/><br />
+          {data.roles.map((role, index) => (
+            <div key={index}>
+              <input
+                className="role"
+                type="text"
+                placeholder="Enter Your Job Role"
+                value={role}
+                onChange={(e) => { handleRoleInputChange(index, e); }}
+              />
+            </div>
+          ))}
+          <a href="#" onClick={handleAddRoleInput}><AddCircleOutlineIcon /></a>
         </div>
-        <div className='input'>
+        <div className="input">
           <h3>Experience</h3>
-          <input type="text" placeholder='Year' onChange={(e) => {dispatch(experienceHandler(e.target.value))}}/>
+          <input type="text" placeholder="Year" onChange={(e) => { dispatch(experienceHandler(e.target.value)); }} />
         </div>
       </form>
     </div>
-  )
+  );
 }
 
-export default Mydetails
+export default Mydetails;
+

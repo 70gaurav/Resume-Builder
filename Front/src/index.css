@@ -76,6 +76,7 @@ form img{
 .input h3 {
   width: 20%;
 }
+
 .input:first-of-type{
   flex-direction: column;
   

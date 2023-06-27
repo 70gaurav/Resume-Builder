@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
 
-// mongoose.connect(mongodb+srv://Resume:<password>@cluster0.r0mm6tz.mongodb.net/?retryWrites=true&w=majority,{
+const connection = mongoose.connect("mongodb+srv://gaurav:resume@cluster0.zbkbait.mongodb.net/?retryWrites=true&w=majority" , {
+    useNewUrlParser: true,
+    useUnifiedTopology:true,
+})
 
-// })
+export default connection;   

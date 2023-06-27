@@ -20,7 +20,10 @@ export const detailSlice = createSlice({
       state.roles[action.payload.index] = action.payload.value;
     },
     addRoleInput: (state) => {
-      state.roles.push(""); // Add an empty string for a new role input
+      state.roles.push("");
+    },
+    removeRoleInput: (state, action) => {
+      state.roles.splice(action.payload, 1); 
     },
     experienceHandler: (state, action) => {
       state.totalExperience = action.payload;
@@ -28,12 +31,6 @@ export const detailSlice = createSlice({
   }
 });
 
-export const {
-  imageHandler,
-  nameHandler,
-  roleHandler,
-  addRoleInput,
-  experienceHandler
-} = detailSlice.actions;
+export const { imageHandler, nameHandler, roleHandler, addRoleInput, removeRoleInput, experienceHandler } = detailSlice.actions;
 
 export default detailSlice.reducer;

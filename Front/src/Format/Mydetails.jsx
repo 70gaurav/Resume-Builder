@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import { imageHandler, nameHandler, roleHandler, experienceHandler, addRoleInput } from '../slice/detaisSlice';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import { imageHandler, nameHandler, roleHandler, experienceHandler, addRoleInput, removeRoleInput } from '../slice/detaisSlice';
 
 function Mydetails() {
   const dispatch = useDispatch();
@@ -15,8 +16,12 @@ function Mydetails() {
     dispatch(addRoleInput());
   };
 
-  const handleRoleInputChange = (index, event) => {
-    const { value } = event.target;
+  const handleRemoveRoleInput = (index) => {
+    dispatch(removeRoleInput(index));
+  };
+
+  const handleRoleInputChange = (index, e) => {
+    const { value } = e.target
     dispatch(roleHandler({ index, value }));
   };
 
@@ -39,16 +44,25 @@ function Mydetails() {
           <h3>Role</h3>
           {data.roles.map((role, index) => (
             <div key={index}>
-              <input
-                className="role"
-                type="text"
-                placeholder="Enter Your Job Role"
-                value={role}
-                onChange={(e) => { handleRoleInputChange(index, e); }}
-              />
+              <div className="role-input-container">
+                <input
+                  className="role"
+                  type="text"
+                  placeholder="Enter Your Job Role"
+                  value={role}
+                  onChange={(e) => { handleRoleInputChange(index, e); }}
+                />
+                {index > 0 && (
+                  <a href="#" className="remove" onClick={() => { handleRemoveRoleInput(index); }}>
+                    <RemoveCircleOutlineIcon />
+                  </a>
+                )}
+              </div>
             </div>
           ))}
-          <a href="#" onClick={handleAddRoleInput}><AddCircleOutlineIcon /></a>
+          <a href="#" onClick={handleAddRoleInput}>
+            <AddCircleOutlineIcon />
+          </a>
         </div>
         <div className="input">
           <h3>Experience</h3>
@@ -60,4 +74,3 @@ function Mydetails() {
 }
 
 export default Mydetails;
-

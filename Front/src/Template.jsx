@@ -15,7 +15,7 @@ console.log(data)
             </div>
             <div className='name'>
                 <h1>{data.name}</h1>
-                <h4>{data.role}</h4>
+                <h4>{data.roles.join(" | ")}</h4>
                 <h4>Total-Experience:-{data.totalExperience}</h4>
             </div>
         </div>

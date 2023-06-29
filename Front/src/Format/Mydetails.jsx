@@ -10,7 +10,7 @@ function Mydetails() {
     return state.details;
   });
 
-  console.log(data);
+  // console.log(data);
 
   const handleAddRoleInput = () => {
     dispatch(addRoleInput());

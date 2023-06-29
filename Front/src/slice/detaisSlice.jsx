@@ -3,12 +3,14 @@ import dummy from "./images/dummy.png";
 
 export const detailSlice = createSlice({
   name: "details",
+
   initialState: {
     image: dummy,
     name: "Name",
-    roles: ["Role"], // Array to store multiple roles
+    roles: ["Role"], 
     totalExperience: ""
   },
+  
   reducers: {
     imageHandler: (state, action) => {
       state.image = action.payload;

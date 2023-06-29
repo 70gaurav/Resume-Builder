@@ -118,17 +118,9 @@ form img {
   padding-right: 40px;
 }
 
-.remove {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #999;
-  transition: color 0.3s ease;
-}
 
 .remove:hover {
-  color: #c5c1c1;
+  color: #000;
 }
 
 
@@ -141,9 +133,7 @@ form img {
   transition: color 0.3s ease;
 }
 
-.remove:hover {
-  color: #c5c1c1;
-}
+
 
 .input h3 {
   width: 20%;
@@ -223,6 +213,7 @@ form img {
 .about,
 .work-history {
   width: 50%;
+  text-align: justify;
 }
 
 .line {
@@ -236,4 +227,17 @@ form img {
   background-color: #000;
   height: 2px;
 }
+.login{
+  background-color: #265e64;
+  height: 100vh;
+  /* backdrop-filter: blur(8px); */
+}
+
+.skills{
+display: flex;
+}
+.skills input{
+  width: 40%;
+}
+
 

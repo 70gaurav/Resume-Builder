@@ -6,7 +6,13 @@ function Template() {
 const data = useSelector((state) => {
   return state.details
 })
-console.log(data)
+
+const about = useSelector((state) => {
+  return state.about.about
+})
+
+// console.log(about)
+// console.log(data)
   return (
     <div className='template'>
         <div className="details">
@@ -24,6 +30,7 @@ console.log(data)
           <h3>ABOUT ME</h3>
           <div className='line'>
             <div className='color'></div>
+            <p>{about}</p>
           </div>
         </div>
         <div className='work-history'>

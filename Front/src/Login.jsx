@@ -3,6 +3,7 @@ import React from 'react'
 function Login() {
   return (
     <div className='login'>
+      <div><h1>RESUMIFY</h1></div>
       <form action="">
         <div className=''>
           <h3>USERNAME</h3>

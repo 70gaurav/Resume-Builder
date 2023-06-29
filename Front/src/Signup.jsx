@@ -3,6 +3,7 @@ import React from 'react'
 function Signup() {
   return (
     <div className='signup'>
+        <div><h1>RESUMIFY</h1></div>
         <form action="">
             <div>
                 <h3>E-MAIL</h3>

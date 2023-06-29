@@ -227,10 +227,23 @@ form img {
   background-color: #000;
   height: 2px;
 }
-.login{
-  background-color: #265e64;
+.login , .signup{
+  background-color: #9681EB;
   height: 100vh;
-  /* backdrop-filter: blur(8px); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+.login form , .signup form {
+  background-color: #6527BE;
+  padding: 6rem;
+  border-radius: 23px;
+}
+
+.login form div, .signup form div{
+  margin: 2rem;
 }
 
 .skills{

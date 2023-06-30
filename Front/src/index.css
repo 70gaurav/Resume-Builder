@@ -225,7 +225,7 @@ form img {
   height: 2px;
 }
 .login , .signup{
-  background-color: #9681EB;
+  background-color: rgba(20, 23, 29 , 1);
   height: 100vh;
   display: flex;
   align-items: center;
@@ -234,9 +234,15 @@ form img {
   
 }
 .login form , .signup form {
-  background-color: #6527BE;
+  background-color: #56c9aa;;
   padding: 6rem;
   border-radius: 23px;
+}
+.login h1{
+  color: #fff;
+}
+.login h1 span{
+  color: #56c9aa;
 }
 
 .login form div, .signup form div{

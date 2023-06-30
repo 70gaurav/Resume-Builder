@@ -30,6 +30,7 @@ function Format() {
         return <Education />;
       case 'Achievements':
         return <Achievements />;
+        
       default:
         return <div>Select a section to edit</div>;
     }

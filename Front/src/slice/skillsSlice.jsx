@@ -13,6 +13,7 @@ export const skillsSlice = createSlice({
           },
           addSkillsInput: (state) => {
             state.skills.push("");
+            console.log(state.skills)
           },
           removeSkillsInput: (state, action) => {
             state.skills.splice(action.payload, 1); 

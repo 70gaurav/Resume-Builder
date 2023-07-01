@@ -40,10 +40,10 @@ function Format() {
     <div className="format">
       <div className="sidebar">
         <div className="top">
-          <Link to="/" className="back">
+          <Link to="/create" className="back">
             <ArrowBackIcon fontSize="large" />
           </Link>
-          <h1>RESUME BUILDER</h1>
+          <h1>RESUMIFY</h1>
         </div>
         <div>
           <ul>

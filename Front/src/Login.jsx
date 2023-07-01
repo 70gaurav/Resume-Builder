@@ -1,8 +1,17 @@
 import React from 'react'
+import dummy from "./slice/images/1.png"
 
 function Login() {
   return (
     <div className='login'>
+      <div className='dummy-main'>
+      <div className='dummy'>
+        <img src={dummy} alt="" />
+
+      </div>
+      </div>
+      
+      <div className='form-main'>
       <div><h1>RESU<span>MIFY</span></h1></div>
       <form action="">
         <div className=''>
@@ -15,9 +24,10 @@ function Login() {
 
         </div>
         <div>
-          <input type="submit" />
+          <button type='submit'>Log In</button>
         </div>
       </form>
+      </div>
 
     </div>
   )

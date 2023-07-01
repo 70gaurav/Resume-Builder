@@ -11,7 +11,8 @@ function Skills() {
   const data = useSelector((state) => {
     return state.skills
   })
-
+  
+  console.log(data)
 
   const handleAddSkillsInput = () => {
     dispatch(addSkillsInput());

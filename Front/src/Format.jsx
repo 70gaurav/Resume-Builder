@@ -43,7 +43,7 @@ function Format() {
           <Link to="/create" className="back">
             <ArrowBackIcon fontSize="large" />
           </Link>
-          <h1>RESUMIFY</h1>
+          <h1 className='logo'>RESU<span>MIFY</span></h1>
         </div>
         <div>
           <ul>

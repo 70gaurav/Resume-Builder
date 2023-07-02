@@ -26,7 +26,7 @@ function Mydetails() {
   };
 
   return (
-    <div>
+    <div className='details-parent'>
       <div className="anchors">
         <a href="">Cancel</a>
         <a href="">Save</a>
@@ -40,10 +40,10 @@ function Mydetails() {
           <h3>Name</h3>
           <input type="text" placeholder="Enter Your Name" onChange={(e) => { dispatch(nameHandler(e.target.value)); }} />
         </div>
-        <div className="input">
+        <div id="role" className="input">
           <h3>Role</h3>
           {data.roles.map((role, index) => (
-            <div key={index}>
+            
               <div className="role-input-container">
                 <input
                   className="role"
@@ -57,7 +57,7 @@ function Mydetails() {
                     <RemoveCircleOutlineIcon />
                   </a>
                 )}
-              </div>
+              
             </div>
           ))}
           <a href="#" onClick={handleAddRoleInput}>

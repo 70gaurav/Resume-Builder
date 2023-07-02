@@ -1,5 +1,6 @@
 import React from 'react'
 import dummy from "./slice/images/1.png"
+import Typewriter from 'typewriter-effect';
 
 
 function Signup() {
@@ -14,7 +15,23 @@ function Signup() {
             </div>
 
             <div className='form-main'>
-                <div><h1>RESU<span>MIFY</span></h1></div>
+            <div>
+        <div className="type">
+          <Typewriter
+            options={{
+              loop: true,
+            }}
+            onInit={(typewriter) => {
+              typewriter
+                .typeString("<h1>RESU<span>MIFY</span></h1>")
+                .pauseFor(1000)
+                .deleteAll()
+                .typeString("<h1>CREATE YOUR <br/><span>RESUME</span> NOW <span>!</span></h1>")
+                .start();
+            }}
+          />
+        </div>
+        </div>
                 <form action="">
                     <div>
                         <h3>E-MAIL</h3>

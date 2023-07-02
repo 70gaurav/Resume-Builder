@@ -1,8 +1,8 @@
 import React from 'react'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import {skillsHandler , addSkillsInput , removeSkillsInput} from "../slice/skillsSlice"
-import { useDispatch , useSelector } from 'react-redux';
+import { skillsHandler, addSkillsInput, removeSkillsInput } from "../slice/skillsSlice"
+import { useDispatch, useSelector } from 'react-redux';
 
 function Skills() {
 
@@ -11,7 +11,7 @@ function Skills() {
   const data = useSelector((state) => {
     return state.skills
   })
-  
+
   console.log(data)
 
   const handleAddSkillsInput = () => {
@@ -27,29 +27,28 @@ function Skills() {
     dispatch(skillsHandler({ index, value }));
   };
   return (
-    <div className="input">
-          <h3>Skills</h3>
-          {data.skills.map((skill, index) => (
-            <div key={index}>
-              <div className="skills">
-                <input
-                  type="text"
-                  placeholder="Enter Your skill"
-                  value={skill}
-                  onChange={(e) => { handleSkillsInputChange(index, e); }}
-                />
-                {index > 0 && (
-                  <a href="#" className="remove" onClick={() => { handleRemoveSkillsInput(index); }}>
-                    <RemoveCircleOutlineIcon />
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
-          <a href="#" onClick={handleAddSkillsInput}>
-            <AddCircleOutlineIcon />
-          </a>
+    <div id='skills-main' >
+      <h3>Skills</h3>
+      {data.skills.map((skill, index) => (
+
+        <div className="input" >
+          <input
+            type="text"
+            placeholder="Enter Your skill"
+            value={skill}
+            onChange={(e) => { handleSkillsInputChange(index, e); }}
+          />
+          {index > 0 && (
+            <a href="#" className="remove" onClick={() => { handleRemoveSkillsInput(index); }}>
+              <RemoveCircleOutlineIcon />
+            </a>
+          )}
         </div>
+      ))}
+      <a href="#" onClick={handleAddSkillsInput}>
+        <AddCircleOutlineIcon />
+      </a>
+    </div>
   )
 }
 

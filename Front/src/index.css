@@ -21,40 +21,47 @@ ul {
 
 .sidebar ul li a {
   display: inline-block;
-  margin: 1rem 0;
+  margin: 1rem;
+  border-radius: 20px;
   width: 100%;
-  padding: 1rem 0;
+  padding: 1rem;
   text-decoration: none;
   color: #fff;
-  background-color: #c5c1c1;
+  background-color: #56c9aa;
   transition: background-color 0.3s ease;
 }
 
 
 .sidebar ul li a.selected {
-  background-color: #999;
+  background-color: #fff;
+  color: #000;
 }
 
 .sidebar ul li a:hover {
-  background-color: #999;
+  background-color: #fff;
+  color: #000;
 }
 
 .sidebar {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   width: 20%;
   height: 100vh;
   font-size: 20px;
   display: flex;
   flex-direction: column;
-  background-color: #eee;
+  color: #fff;
+  background-color: #000;
 }
 .sidebar .top{
   margin: 2rem 0;
 }
+.logo span {
+  color: #56c9aa;
+}
 
 .format {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .sidebar h1 {
@@ -62,13 +69,12 @@ ul {
 }
 
 .section {
-  height: 100vh;
   width: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid black;
-  background-color: #eee;
+  /* border: 2px solid black; */
+  background-color: #56c9aa;
 }
 
 form img {
@@ -99,6 +105,12 @@ form img {
   margin-left: 10px;
   
 }
+#role{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 /* .remove{
   position: absolute;
   right: 0;
@@ -107,6 +119,11 @@ form img {
 .role-input-container {
   display: flex;
   align-items: center;
+  
+}
+.role-input-container input{
+  width: 24%;
+  margin: 10px;
 }
 
 .role {
@@ -131,19 +148,14 @@ form img {
 
 
 
-.input h3 {
-  width: 20%;
-}
 
-.input:first-of-type {
+.details-parent.input:first-of-type {
   flex-direction: column;
 }
 
 .side-template {
-  border: 2px solid black;
-  height: 100vh;
+  /* border: 2px solid black; */
   width: 40%;
-  background-color: #eee;
 }
 
 .start{
@@ -179,19 +191,20 @@ form img {
 .anchors {
   display: flex;
   justify-content: space-between;
+  margin: 2rem;
 }
 
 .anchors a {
   text-decoration: none;
-  color: #fff;
+  color: #56c9aa;
   padding: 0.5rem;
-  background-color: #c5c1c1;
+  background-color: #000;
   border-radius: 10px;
   transition: background-color 0.3s ease;
 }
 
 .anchors a:hover {
-  background-color: #999;
+  background-color: #fff;
 }
 
 .details {
@@ -314,6 +327,18 @@ display: flex;
 
 
 
+#skills-main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
+#skills-main .input {  
+  width: 20%;
+}
 
+#skills-main .input input{
+  width: 80%;
+}
 

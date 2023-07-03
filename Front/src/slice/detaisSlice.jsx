@@ -11,6 +11,7 @@ export const detailSlice = createSlice({
     totalExperience: ""
   },
   
+
   reducers: {
     imageHandler: (state, action) => {
       state.image = action.payload;

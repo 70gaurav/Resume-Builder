@@ -32,7 +32,7 @@ function Mydetails() {
         <a href="">Save</a>
       </div>
       <form action="">
-        <div className="input">
+        <div className="input" id='image-input'>
           <img src={data.image} alt="" />
           <input type="file" onChange={(e) => { dispatch(imageHandler(URL.createObjectURL(e.target.files[0]))); }} />
         </div>

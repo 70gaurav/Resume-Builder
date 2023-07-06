@@ -1,5 +1,4 @@
 import React from 'react'
-import dummy from "./slice/images/1.png"
 import Typewriter from 'typewriter-effect';
 
 

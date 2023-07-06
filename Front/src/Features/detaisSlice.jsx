@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import dummy from "./images/dummy.png";
+import dummy from "../assets/images/dummy.png";
 
 export const detailSlice = createSlice({
   name: "details",

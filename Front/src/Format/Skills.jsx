@@ -1,7 +1,7 @@
 import React from 'react'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import { skillsHandler, addSkillsInput, removeSkillsInput } from "../slice/skillsSlice"
+import { skillsHandler, addSkillsInput, removeSkillsInput } from "../Features/skillsSlice"
 import { useDispatch, useSelector } from 'react-redux';
 
 function Skills() {

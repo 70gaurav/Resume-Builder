@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import { imageHandler, nameHandler, roleHandler, experienceHandler, addRoleInput, removeRoleInput } from '../slice/detaisSlice';
+import { imageHandler, nameHandler, roleHandler, experienceHandler, addRoleInput, removeRoleInput } from '../Features/detaisSlice';
 
 function Mydetails() {
   const dispatch = useDispatch();

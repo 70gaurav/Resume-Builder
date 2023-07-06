@@ -1,0 +1,30 @@
+.register{
+    background-color: #00C8AA;
+    height: 100vh;
+}
+
+.form-selector{
+    background-color: #fff;
+    width: 400px;
+    padding: 2px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-selector a{
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    padding: 0.75rem;
+    border-radius: 15px;
+  transition: background-color 0.2s  ease-in-out;
+
+}
+.form-selector a:hover{
+    background-color: #00C8AA;
+    color: #fff;
+
+}

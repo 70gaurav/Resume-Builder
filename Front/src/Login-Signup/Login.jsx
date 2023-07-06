@@ -1,34 +1,22 @@
 import React from 'react';
-import dummy from "./slice/images/1.png";
-import Typewriter from 'typewriter-effect';
 
 function Login() {
   return (
-    <div className='login'>
+    <div className='login-parent'>
+      <div>
+
+      </div>
+      <div className='login'>
       <div className='dummy-main'>
         <div className='dummy'>
-          <img src={dummy} alt="" />
+          
         </div>
       </div>
       
       <div className='form-main'>
        
         <div>
-        <div className="type">
-          <Typewriter
-            options={{
-              loop: true,
-            }}
-            onInit={(typewriter) => {
-              typewriter
-                .typeString("<h1>RESU<span>MIFY</span></h1>")
-                .pauseFor(1000)
-                .deleteAll()
-                .typeString("<h1>CREATE YOUR <br/><span>RESUME</span> NOW <span>!</span></h1>")
-                .start();
-            }}
-          />
-        </div>
+       
         </div>
         <form action="">
           <div className=''>
@@ -44,6 +32,7 @@ function Login() {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 }

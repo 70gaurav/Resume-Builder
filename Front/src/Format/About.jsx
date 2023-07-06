@@ -1,5 +1,5 @@
 import React from 'react'
-import {aboutHandler} from "../slice/aboutSlice"
+import {aboutHandler} from "../Features/aboutSlice"
 import { useDispatch } from 'react-redux'
 
 

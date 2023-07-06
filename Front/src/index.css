@@ -259,51 +259,6 @@ width: 50%;
   background-color: #000;
   height: 3px;
 }
-.login , .signup{
-  background-color: rgba(20, 23, 29 , 1);
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-}
-.login form , .signup form {
-  background-color: #56c9aa;;
-  padding: 4rem;
-  border-radius: 23px;
-  position: absolute;
-  left: -12rem;
-
-}
-.dummy-main , .form-main{
-  width: 50%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.form-main{
-  position: relative;
-}
-.dummy{
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-.dummy img{
-  width: 60%;
-
-}
-.login h1 , .signup h1{
-  color: #fff;
-}
-.login h1 span ,.signup h1 span{
-  color: #56c9aa;
-}
-
-.login form div, .signup form div{
-  margin: 2rem;
-}
 
 .skills{
 display: flex;

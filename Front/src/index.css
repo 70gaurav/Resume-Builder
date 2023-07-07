@@ -237,10 +237,12 @@ width: 50%;
 
 .section2{
   width: 48%;
-  margin: 13rem 1rem 1rem 1rem
+  margin: 13rem 1rem 1rem 1rem;
+ 
 }
 .section2 .skills{
   width: 100% ;
+  flex-direction: column;
 }
 .about,
 .work-history {

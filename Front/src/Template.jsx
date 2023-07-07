@@ -1,85 +1,91 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import html2pdf from 'html2pdf.js';
 
 function Template() {
+  const data = useSelector((state) => state.details);
+  const about = useSelector((state) => state.about.about);
+  const skills = useSelector((state) => state.skills.skills);
+  const experience = useSelector((state) => state.experience.fields);
 
-  const data = useSelector((state) => {
-    return state.details
-  })
+  const downloadPDF = () => {
+    const element = document.getElementById('template');
+    const opt = {
+      margin: 0,
+      filename: `${data.name}'s resume.pdf`,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+    };
 
-  const about = useSelector((state) => {
-    return state.about.about
-  })
+    html2pdf().set(opt).from(element).save();
+  };
 
-  const skills = useSelector((state) => {
-    return state.skills.skills
-  })
-
-
-  console.log(skills)
-  // console.log(about)
-  // console.log(data)
   return (
-    <div className='template'>
-      <div className="details">
+    <div className='template' id='template'>
+      <div className='details'>
         <div className='image'>
-          <img src={data.image} alt="" />
+          <img src={data.image} alt='' />
         </div>
         <div className='name'>
           <h1>{data.name}</h1>
-          <h4>{data.roles.join(" | ")}</h4>
-          <h4>Total-Experience:-{data.totalExperience}</h4>
+          <h4>{data.roles.join(' | ')}</h4>
+          <h4>Total-Experience: {data.totalExperience}</h4>
         </div>
       </div>
       <div className='section1'>
         <div className='about'>
-          <h3>ABOUT ME</h3>
+          <h3 contentEditable>ABOUT ME</h3>
           <div className='line'>
             <div className='color'></div>
             <p>{about}</p>
           </div>
         </div>
         <div className='work-history'>
-          <h3>WORK HISTORY</h3>
+          <h3 contentEditable>WORK HISTORY</h3>
           <div className='line'>
             <div className='color'></div>
+            {experience.map((element, index) => (
+              <div key={index}>
+                <h3>{element.role}</h3>
+                <h5>{element.company}</h5>
+              </div>
+            ))}
           </div>
         </div>
       </div>
       <div className='section2'>
-        <div className='sklls'>
-          <h3>SKILLS</h3>
+        <div className='skills'>
+          <h3 contentEditable>SKILLS</h3>
           <div className='line'>
             <div className='color'></div>
             <ul className='skills-list'>
-            {
-              skills.map((skill ) => {
-                return <li>{skill}</li>
-              })
-            }
+              {skills.map((skill, index) => (
+                <li key={index}>{skill}</li>
+              ))}
             </ul>
-
           </div>
         </div>
-
       </div>
       <div className='section3'>
-            <div className='certifications'>
-            <h3>CERTIFICATIONS</h3>
+        <div className='certifications'>
+          <h3 contentEditable>CERTIFICATIONS</h3>
           <div className='line'>
             <div className='color'></div>
           </div>
-            </div>
-            <div className='education'>
-            <h3>EDUCATION</h3>
+        </div>
+        <div className='education'>
+          <h3 contentEditable>EDUCATION</h3>
           <div className='line'>
             <div className='color'></div>
           </div>
-            </div>
+        </div>
       </div>
-
+      <div className='download'>
+        <button onClick={downloadPDF}>Download PDF</button>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Template
+export default Template;

@@ -1,29 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import { fieldHandler, addFieldInput, removeFieldInput } from "../Features/experienceSlice";
 
 function Experience() {
-  const [fields, setFields] = useState([{ role: '', company: '' }]);
-
-  const handleAddField = () => {
-    setFields([...fields, { role: '', company: '' }]);
-  };
-
-  const handleRemoveField = (index) => {
-    const updatedFields = [...fields];
-    updatedFields.splice(index, 1);
-    setFields(updatedFields);
-  };
+  const fields = useSelector((state) => state.experience.fields);
+  const dispatch = useDispatch();
 
   const handleFieldChange = (index, field, value) => {
-    const updatedFields = [...fields];
-    updatedFields[index][field] = value;
-    setFields(updatedFields);
+    dispatch(fieldHandler({ index, field, value }));
+  };
+
+  const handleAddField = (e) => {
+    e.preventDefault();
+    dispatch(addFieldInput());
+  };
+
+  const handleRemoveField = (e, index) => {
+    e.preventDefault();
+    dispatch(removeFieldInput(index));
   };
 
   return (
     <div className="experience-parent">
-      <form action="">
+      <form>
         {fields.map((field, index) => (
           <div className="experience" key={index}>
             <div className="input">
@@ -43,11 +44,11 @@ function Experience() {
               />
             </div>
             {index === fields.length - 1 ? (
-              <a href="#" onClick={handleAddField}>
+              <a href="/" onClick={handleAddField}>
                 <AddCircleOutlineIcon />
               </a>
             ) : (
-              <a href="#" onClick={() => handleRemoveField(index)}>
+              <a href="/" onClick={(e) => handleRemoveField(e, index)}>
                 <RemoveCircleOutlineIcon />
               </a>
             )}

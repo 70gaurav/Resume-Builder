@@ -12,7 +12,6 @@ function Skills() {
     return state.skills
   })
 
-  console.log(data)
 
   const handleAddSkillsInput = () => {
     dispatch(addSkillsInput());

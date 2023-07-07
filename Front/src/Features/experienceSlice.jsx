@@ -1,29 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
-export const experinceSlice = createSlice({
-    name : "experience",
-
-    initialState : {
-       fields : [{ role: '', company: '' }],
-
+export const experienceSlice = createSlice({
+  name: "experience",
+  initialState: {
+    fields: [{ role: "", company: "" }],
+  },
+  reducers: {
+    fieldHandler: (state, action) => {
+      const { index, field, value } = action.payload;
+      state.fields[index][field] = value;
     },
+    addFieldInput: (state) => {
+      state.fields.push({ role: "", company: "" });
+    },
+    removeFieldInput: (state, action) => {
+      state.fields.splice(action.payload, 1);
+    },
+  },
+});
 
-    reducers : {
-        fieldHandler: (state, action) => {
-            state.fields = [...state.fields, { role: '', company: '' }];
-          },
-          addFieldInput: (state) => {
-            state.roles.push("");
-          },
-          removeFieldInput: (state, action) => {
-            state.roles.splice(action.payload, 1); 
-          },
-    }
+export const { fieldHandler, addFieldInput, removeFieldInput } = experienceSlice.actions;
 
-
-})
-
-export const {fieldHandler , addFieldInput , removeFieldInput} = experinceSlice.actions
-
-export default experinceSlice.reducer
+export default experienceSlice.reducer;

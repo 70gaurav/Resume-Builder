@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Mydetails from './Format/Mydetails';
-import Education from './Format/Education';
-import Experience from './Format/Experience';
-import Skills from './Format/Skills';
-import Achievements from './Format/Achievements';
-import About from './Format/About';
+import Mydetails from '../Format/Mydetails';
+import Education from '../Format/Education';
+import Experience from '../Format/Experience';
+import Skills from '../Format/Skills';
+import Achievements from '../Format/Achievements';
+import About from '../Format/About';
 import Template from './Template';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 

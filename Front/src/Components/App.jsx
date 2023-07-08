@@ -3,8 +3,8 @@ import { BrowserRouter , Routes , Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import Start from './Start'
 import Format from './Format'
-import Store from "./App/Store"
-import Registeration from './Login-Signup/Registeration'
+import Store from "../App/Store"
+import Registeration from '../Login-Signup/Registeration'
 
 
 function App() {

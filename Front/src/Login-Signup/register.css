@@ -1,9 +1,9 @@
-.register{
+.register {
     background-color: #00C8AA;
     height: 100vh;
 }
 
-.form-selector{
+.form-selector {
     background-color: #fff;
     width: 400px;
     padding: 2px;
@@ -12,7 +12,8 @@
     align-items: center;
     justify-content: center;
 }
-.form-selector a{
+
+.form-selector a {
     display: inline-block;
     width: 50%;
     text-align: center;
@@ -20,11 +21,39 @@
     color: black;
     padding: 0.75rem;
     border-radius: 15px;
-  transition: background-color 0.2s  ease-in-out;
+    transition: background-color 0.2s ease-in-out;
 
 }
-.form-selector a:hover{
+
+.form-selector a:hover {
     background-color: #00C8AA;
     color: #fff;
 
+}
+
+header {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+}
+
+.header-list ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-list ul li a{
+    color: #000;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+}
+
+.header-list .popup{
+    background-color: #00C8AA;
+    color: #fff;
+    border-radius: 28px;
 }

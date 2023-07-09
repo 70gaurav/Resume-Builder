@@ -1,6 +1,9 @@
 .register {
-    background-color: #00C8AA;
-    height: 100vh;
+    background: url(../assets/images/bg.png) no-repeat fixed center / cover;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .form-selector {
@@ -37,6 +40,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 2rem;
+    height: 10vh;
 }
 
 .header-list ul {
@@ -57,3 +61,24 @@ header {
     color: #fff;
     border-radius: 28px;
 }
+.form-wrapper{
+    background-color: rgba(255, 255, 255, .45);
+    backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    border-radius: 28px;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+    height: 600px;
+}
+.form-close{
+    margin: 0.5rem 0;
+}
+.form-close a{
+    color: #00C8AA;
+}
+
+
+
+

@@ -5,17 +5,9 @@ import Typewriter from 'typewriter-effect';
 function Signup() {
     return (
         <div className='signup'>
-
-            <div className='dummy-main'>
-                <div className='dummy'>
-                    <img src={dummy} alt="" />
-
-                </div>
-            </div>
-
             <div className='form-main'>
             <div>
-        <div className="type">
+        {/* <div className="type">
           <Typewriter
             options={{
               loop: true,
@@ -29,7 +21,7 @@ function Signup() {
                 .start();
             }}
           />
-        </div>
+        </div> */}
         </div>
                 <form action="">
                     <div>

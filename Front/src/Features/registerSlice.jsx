@@ -4,16 +4,22 @@ export const registerSlice = createSlice({
     name : "register",
 
     initialState : {
-        switch : ""
+        visibility : false , 
+        toggle : ""
+        
     } ,
 
     reducers : {
-        switchHandler : (state , action ) => {
-            state.switch = action.payload
-        } 
+        toggleHandler : (state , action ) => {
+            state.toggle = action.payload
+        } ,
+
+        visibilityHandler : (state , action) => {
+            state.visibility = action.payload
+        }
     }
 })
 
-export const {switchHandler} = registerSlice.actions
+export const {toggleHandler , visibilityHandler} = registerSlice.actions
 
 export default registerSlice.reducer

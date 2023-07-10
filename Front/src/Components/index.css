@@ -43,7 +43,6 @@ ul {
 }
 
 .sidebar {
-  /* border: 2px solid black; */
   width: 20%;
   height: 100vh;
   font-size: 20px;
@@ -61,7 +60,6 @@ ul {
 
 .format {
   display: flex;
-  /* align-items: center; */
 }
 
 .sidebar h1 {
@@ -154,7 +152,6 @@ width: 50%;
 }
 
 .side-template {
-  /* border: 2px solid black; */
   width: 40%;
 }
 
@@ -228,40 +225,6 @@ width: 50%;
 #image-input{
   flex-direction: column;
 }
-
-
-
-.container {
-  max-width: 21cm; /* A4 width */
-  margin: 0 auto;
-  padding: 2cm;
-}
-
-/* Section 1 */
-
-.section1 {
-  display: flex;
-  margin: 1rem;
-}
-
-/* Section 2 */
-
-.section2 {
-  width: 48%;
-  margin: 1rem;
-}
-
-.section2 .skills {
-  width: 100%;
-  flex-direction: column;
-}
-
-.about,
-.work-history {
-  width: 50%;
-  text-align: justify;
-}
-
 .line {
   width: 90%;
   background-color: #ccc;
@@ -273,56 +236,17 @@ width: 50%;
   background-color: #000;
   height: 3px;
 }
-
-.skills {
+.section1 , .section3 {
   display: flex;
+  justify-content: flex-start;
+  padding: 1rem;
 }
-
-.skills input {
-  width: 40%;
-}
-
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.skills-list li {
-  margin: 5px;
-  background-color: #999;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-/* Section 3 */
-
-.section3 {
-  display: flex;
-  margin: 1rem;
-}
-
-.section3 .certifications,
-.section3 .education {
+.about , .work-history , .skills , .certifications , .education{
   width: 50%;
 }
-
-/* Additional styles */
-
-@media print {
-  body {
-    margin: 0;
-    padding: 0;
-  }
-
-  .container {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-  .section1,
-  .section2,
-  .section3 {
-    height: auto !important;
-  }
+.section2{
+  padding: 1rem;
 }
+
+
+

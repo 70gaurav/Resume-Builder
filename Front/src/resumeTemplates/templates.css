@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .template1-details {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .template1-image {
+    width: 120px;
+    height: 120px;
+    margin: 0.5rem;
+  }
+  
+  .template1-image img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+  }
+  
+  .line {
+    width: 90%;
+    background-color: #ccc;
+    height: 3px;
+  }
+  
+  .color {
+    width: 20%;
+    background-color: #000;
+    height: 3px;
+  }
+  
+  .template1-main {
+    display: flex;
+  }
+  
+  .template1-left,
+  .template1-right {
+    width: 50%;
+    height: auto;
+    
+}
+.about , .skills ,.education , .work-history , .certifications{
+    margin: 2rem;
+}
+.skills-list li{
+    margin: 4px ;
+    display: inline-block;
+    background-color: #ccc;
+    padding: 5px;
+    border-radius: 5px;
+}
+  
+  /* #template1 {
+    background-color: #ccc;
+  } */
+  

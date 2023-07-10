@@ -6,7 +6,7 @@ import Experience from '../Format/Experience';
 import Skills from '../Format/Skills';
 import Achievements from '../Format/Achievements';
 import About from '../Format/About';
-import Template from './Template';
+import Template from '../resumeTemplates/Template1';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function Format() {
@@ -30,7 +30,7 @@ function Format() {
         return <Education />;
       case 'Achievements':
         return <Achievements />;
-        
+
       default:
         return <div>Select a section to edit</div>;
     }

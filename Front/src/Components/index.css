@@ -225,28 +225,7 @@ width: 50%;
 #image-input{
   flex-direction: column;
 }
-.line {
-  width: 90%;
-  background-color: #ccc;
-  height: 3px;
-}
 
-.color {
-  width: 20%;
-  background-color: #000;
-  height: 3px;
-}
-.section1 , .section3 {
-  display: flex;
-  justify-content: flex-start;
-  padding: 1rem;
-}
-.about , .work-history , .skills , .certifications , .education{
-  width: 50%;
-}
-.section2{
-  padding: 1rem;
-}
 
 
 

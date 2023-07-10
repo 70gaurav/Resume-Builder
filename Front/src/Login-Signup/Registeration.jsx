@@ -4,7 +4,6 @@ import Signup from "./Signup"
 import "./register.css"
 import { toggleHandler , visibilityHandler } from '../Features/registerSlice'
 import { useSelector, useDispatch } from 'react-redux'
-// import Typewriter from 'typewriter-effect';
 import Header from '../Components/Header'
 import CancelIcon from '@mui/icons-material/Cancel';
 
@@ -33,8 +32,8 @@ function Registeration() {
             <a href="" onClick={(e) => {e.preventDefault() ; dispatch(visibilityHandler(false))}}><CancelIcon fontSize='large' /></a>
           </div>
           <div className='form-selector'>
-            <a href="" onClick={(e) => { e.preventDefault(); dispatch(toggleHandler("register")) }}>Register</a>
-            <a href="" onClick={(e) => { e.preventDefault(); dispatch(toggleHandler("signin"))  }}>Sign In</a>
+            <a href=""  className={data.toggle === 'register' ? 'active' : ''} onClick={(e) => { e.preventDefault(); dispatch(toggleHandler("register")) }}>Register</a>
+            <a href="" className={data.toggle === 'signin' ? 'active' : ''} onClick={(e) => { e.preventDefault(); dispatch(toggleHandler("signin"))  }}>Sign In</a>
 
           </div>
         {

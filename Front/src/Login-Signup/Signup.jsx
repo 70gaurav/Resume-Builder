@@ -24,21 +24,29 @@ function Signup() {
         </div> */}
         </div>
                 <form action="">
-                    <div>
-                        <h3>E-MAIL</h3>
-                        <input type="email" placeholder='ENTER YOUR E-MAIL' />
+                <div>
+                        <div class="blank">
+                            <input type="text" required="required"/>
+                            <span>USERNAME</span>
+                        </div>
                     </div>
+
                     <div>
-                        <h3>USERNAME</h3>
-                        <input type="text" placeholder='ENTER YOUR USERNAME' />
+                        <div class="blank">
+                            <input type="email" required="required"/>
+                            <span>E-MAIL</span>
+                        </div>
                     </div>
+
                     <div>
-                        <h3>PASSWORD</h3>
-                        <input type="password" placeholder='ENTER YOUR PASSWORD' />
+                        <div class="blank">
+                            <input type="password" required="required"/>
+                            <span>PASSWORD</span>
+                        </div>
                     </div>
-                    <div>
-                        <button type='submit'>Sign Up</button>
-                    </div>
+
+                    <button type='submit'>Register</button>
+
                 </form>
             </div>
 

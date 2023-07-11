@@ -45,93 +45,96 @@ function Format() {
 
   return (
     <div className="format">
-      <div className="sidebar">
-        {/* <div className="top">
-         
-          <h1 className='logo'>RESU<span>MIFY</span></h1>
-        </div> */}
-        <div>
-          <ul>
-            <li>
-            <Link to="/create" className="back">
-            <HomeIcon fontSize="large" />
-          </Link>
-            </li>
-            <li>
-              <a
-                href="#"
-                className={selectedOption === 'My Details' ? 'selected' : ''}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleOptionClick('My Details');
-                }}
-              >
-                <AccountBoxIcon fontSize="large"/>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className={selectedOption === 'About Me' ? 'selected' : ''}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleOptionClick('About Me');
-                }}
-              >
-                <InfoIcon  fontSize="large"/>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className={selectedOption === 'Skills & Proficiencies' ? 'selected' : ''}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleOptionClick('Skills & Proficiencies');
-                }}
-              >
-                <LaptopMacIcon fontSize="large"/>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className={selectedOption === 'Work Experience' ? 'selected' : ''}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleOptionClick('Work Experience');
-                }}
-              >
-                <WorkHistoryIcon fontSize='large'/>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className={selectedOption === 'Educational Background' ? 'selected' : ''}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleOptionClick('Educational Background');
-                }}
-              >
-                <SchoolIcon fontSize="large"/>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className={selectedOption === 'Achievements' ? 'selected' : ''}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleOptionClick('Achievements');
-                }}
-              >
-                <EmojiEventsIcon fontSize="large"/>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+     <div className="sidebar">
+  <div>
+    <ul>
+      <li>
+        <Link to="/create" className="back">
+          <HomeIcon fontSize="large" />
+        </Link>
+      </li>
+      <li>
+        <a
+          href="#"
+          className={selectedOption === 'My Details' ? 'selected' : ''}
+          onClick={(e) => {
+            e.preventDefault();
+            handleOptionClick('My Details');
+          }}
+          data-name="My Details"
+        >
+          <AccountBoxIcon fontSize="large" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          className={selectedOption === 'About Me' ? 'selected' : ''}
+          onClick={(e) => {
+            e.preventDefault();
+            handleOptionClick('About Me');
+          }}
+          data-name="About Me"
+        >
+          <InfoIcon fontSize="large" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          className={selectedOption === 'Skills & Proficiencies' ? 'selected' : ''}
+          onClick={(e) => {
+            e.preventDefault();
+            handleOptionClick('Skills & Proficiencies');
+          }}
+          data-name="Skills & Proficiencies"
+        >
+          <LaptopMacIcon fontSize="large" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          className={selectedOption === 'Work Experience' ? 'selected' : ''}
+          onClick={(e) => {
+            e.preventDefault();
+            handleOptionClick('Work Experience');
+          }}
+          data-name="Work Experience"
+        >
+          <WorkHistoryIcon fontSize="large" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          className={selectedOption === 'Educational Background' ? 'selected' : ''}
+          onClick={(e) => {
+            e.preventDefault();
+            handleOptionClick('Educational Background');
+          }}
+          data-name="Educational Background"
+        >
+          <SchoolIcon fontSize="large" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          className={selectedOption === 'Achievements' ? 'selected' : ''}
+          onClick={(e) => {
+            e.preventDefault();
+            handleOptionClick('Achievements');
+          }}
+          data-name="Achievements"
+        >
+          <EmojiEventsIcon fontSize="large" />
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
       <div className="section">{renderComponent()}</div>
       <div className="side-template">
         <Template />

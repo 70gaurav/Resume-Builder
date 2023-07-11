@@ -21,35 +21,53 @@ ul {
 
 .sidebar ul li a {
   display: inline-block;
-  margin: 1rem;
+  margin: 5px;
   border-radius: 20px;
   width: 100%;
-  padding: 1rem;
+  padding: 10px;
   text-decoration: none;
-  color: #fff;
-  background-color: #56c9aa;
-  transition: background-color 0.3s ease;
+  color: #babbbc;
+  transition:  ease-in-out;
+  position: relative;
+  z-index: 1;
+
 }
 
 
 .sidebar ul li a.selected {
-  background-color: #fff;
-  color: #000;
+  color:#56c9aa ;
+  
 }
 
 .sidebar ul li a:hover {
-  background-color: #fff;
-  color: #000;
+  color: #56c9aa;
 }
 
+.sidebar ul li a:hover::before{
+  display: block;
+  left: 0;
+
+}
+
+
+.sidebar ul li a::before{
+content: "";
+height: 50%;
+width: 200%;
+background-color: #56c9aa;
+top: 25%;
+left: -200%;
+position: absolute;
+display: none;
+z-index:0;
+}
+
+
 .sidebar {
-  width: 20%;
-  height: 100vh;
-  font-size: 20px;
-  display: flex;
-  flex-direction: column;
-  color: #fff;
-  background-color: #000;
+  border: 2px solid #babbbc;
+  border-radius: 30px;
+  margin: 4rem;
+
 }
 .sidebar .top{
   margin: 2rem 0;

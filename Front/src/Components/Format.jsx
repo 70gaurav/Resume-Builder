@@ -8,6 +8,13 @@ import Achievements from '../Format/Achievements';
 import About from '../Format/About';
 import Template from '../resumeTemplates/Template1';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import HomeIcon from '@mui/icons-material/Home';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import InfoIcon from '@mui/icons-material/Info';
+import LaptopMacIcon from '@mui/icons-material/LaptopMac';
+import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
+import SchoolIcon from '@mui/icons-material/School';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 
 function Format() {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -39,14 +46,17 @@ function Format() {
   return (
     <div className="format">
       <div className="sidebar">
-        <div className="top">
-          <Link to="/create" className="back">
-            <ArrowBackIcon fontSize="large" />
-          </Link>
+        {/* <div className="top">
+         
           <h1 className='logo'>RESU<span>MIFY</span></h1>
-        </div>
+        </div> */}
         <div>
           <ul>
+            <li>
+            <Link to="/create" className="back">
+            <HomeIcon fontSize="large" />
+          </Link>
+            </li>
             <li>
               <a
                 href="#"
@@ -56,7 +66,7 @@ function Format() {
                   handleOptionClick('My Details');
                 }}
               >
-                My Details
+                <AccountBoxIcon fontSize="large"/>
               </a>
             </li>
             <li>
@@ -68,7 +78,7 @@ function Format() {
                   handleOptionClick('About Me');
                 }}
               >
-                About Me
+                <InfoIcon  fontSize="large"/>
               </a>
             </li>
             <li>
@@ -80,7 +90,7 @@ function Format() {
                   handleOptionClick('Skills & Proficiencies');
                 }}
               >
-                Skills & Proficiencies
+                <LaptopMacIcon fontSize="large"/>
               </a>
             </li>
             <li>
@@ -92,7 +102,7 @@ function Format() {
                   handleOptionClick('Work Experience');
                 }}
               >
-                Work Experience
+                <WorkHistoryIcon fontSize='large'/>
               </a>
             </li>
             <li>
@@ -104,7 +114,7 @@ function Format() {
                   handleOptionClick('Educational Background');
                 }}
               >
-                Educational Background
+                <SchoolIcon fontSize="large"/>
               </a>
             </li>
             <li>
@@ -116,7 +126,7 @@ function Format() {
                   handleOptionClick('Achievements');
                 }}
               >
-                Achievements
+                <EmojiEventsIcon fontSize="large"/>
               </a>
             </li>
           </ul>

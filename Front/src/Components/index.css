@@ -26,7 +26,7 @@ ul {
   width: 100%;
   padding: 10px;
   text-decoration: none;
-  color: #babbbc;
+  color: #000;
   position: relative;
   z-index: 1;
 }
@@ -78,6 +78,7 @@ ul {
   border-radius: 30px;
   margin: 4rem;
   background-color: #fff;
+  box-shadow: 5px 5px 5px gray;
 }
 
 .sidebar .top{
@@ -100,14 +101,29 @@ ul {
 
 .section {
   width: 42%;
+  height: 100%;
   padding: 1.5rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  background-color:#8CC0DE ;
+  background-color: #8CC0DE;
   border-top-left-radius: 23px;
   border-bottom-left-radius: 23px;
   overflow-y: auto;
+}
+
+.section-content {
+  margin-top: 10px;
+}
+.side-template {
+  width: 40%;
+  border-radius: 23px;
+  background-color: #fff;
+  position: absolute;
+  left: 46%;
+  height: 80%;
+  overflow-y: auto;
+
 }
 
 form img {
@@ -132,13 +148,17 @@ text-align: start;
 
 
 .input input {
-  width: 300px;
+  width: 250px;
   height: 50px;
   margin-left: 20px;
   border-radius: 10px;
   padding: 0.5rem;
   border: 1px solid #ccc;
   transition: border-color 0.3s ease;
+}
+
+.experience .input{
+  flex-direction: column;
 }
 
 
@@ -164,14 +184,7 @@ text-align: start;
   flex-direction: column;
 }
 
-.side-template {
-  width: 40%;
-  border-radius: 23px;
-  background-color: #fff;
-  position: absolute;
-  left: 46%;
-  height: 80%;
-}
+
 
 .start{
   background-color: #000;

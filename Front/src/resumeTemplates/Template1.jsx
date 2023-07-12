@@ -9,9 +9,12 @@ function Template() {
   const skills = useSelector((state) => state.skills.skills);
   const experience = useSelector((state) => state.experience.fields);
   const education = useSelector((state) => state.education.fields);
+  const isDownloading = useSelector((state) => state.download.isDownloading)
 
   const downloadPDF = () => {
-    const element = document.getElementById('template1');
+    dispatch(startDownload());
+
+    const element = document.getElementById("#template1");
     const opt = {
       margin: 0,
       filename: `${data.name}'s resume.pdf`,
@@ -21,6 +24,10 @@ function Template() {
     };
 
     html2pdf().set(opt).from(element).save();
+
+    setTimeout(() => {
+      dispatch(finishDownload());
+    }, 2000); // Assuming the download takes approximately 2 seconds
   };
 
   return (
@@ -98,7 +105,9 @@ function Template() {
       </div>
 
       <div className="download">
-        <button onClick={downloadPDF}>Download PDF</button>
+        <button onClick={downloadPDF} disabled={isDownloading}>
+          {isDownloading ? 'Downloading...' : 'Download PDF'}
+        </button>
       </div>
     </div>
   );

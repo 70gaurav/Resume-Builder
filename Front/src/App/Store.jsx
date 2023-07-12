@@ -6,6 +6,7 @@ import registerReducer from "../Features/registerSlice";
 import experienceReducer from "../Features/experienceSlice"
 import educationReducer from "../Features/educationSlice"
 import certificationReducer from "../Features/certificationSlice";
+import downloadReducer from "../Features/downloadSlice";
 
 
 export default configureStore({
@@ -16,6 +17,7 @@ export default configureStore({
         skills : skillsReducer,
         experience : experienceReducer,
         education : educationReducer,
-        certification: certificationReducer
+        certification: certificationReducer,
+        download: downloadReducer,
     }
 })

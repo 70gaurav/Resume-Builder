@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const experienceSlice = createSlice({
-  name: "experience",
+export const educationSlice = createSlice({
+  name: "education",
   initialState: {
-    fields: [{ role: "", company: "" ,startDate: "" , endDate: "" }],
+    fields: [{ level: "", organization: "" , yearOfPassing: ""  }],
   },
   reducers: {
     fieldHandler: (state, action) => {
@@ -11,7 +11,7 @@ export const experienceSlice = createSlice({
       state.fields[index][field] = value;
     },
     addFieldInput: (state) => {
-      state.fields.push({ role: "", company: "" });
+      state.fields.push({ level: "", organization: "" ,yearOfPassing: "" });
     },
     removeFieldInput: (state, action) => {
       state.fields.splice(action.payload, 1);
@@ -19,6 +19,6 @@ export const experienceSlice = createSlice({
   },
 });
 
-export const { fieldHandler, addFieldInput, removeFieldInput } = experienceSlice.actions;
+export const { fieldHandler, addFieldInput, removeFieldInput } = educationSlice.actions;
 
-export default experienceSlice.reducer;
+export default educationSlice.reducer;

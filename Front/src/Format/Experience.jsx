@@ -31,6 +31,7 @@ function Experience() {
               <h3>Role</h3>
               <input
                 type="text"
+                placeholder='Role'
                 value={field.role}
                 onChange={(e) => handleFieldChange(index, 'role', e.target.value)}
               />
@@ -39,8 +40,27 @@ function Experience() {
               <h3>Company/Organization</h3>
               <input
                 type="text"
+                placeholder='organization'
                 value={field.company}
                 onChange={(e) => handleFieldChange(index, 'company', e.target.value)}
+              />
+            </div>
+            <div className="input">
+              <h3>Start Date</h3>
+              <input
+                type="date"
+                placeholder='Start Date'
+                value={field.startDate}
+                onChange={(e) => handleFieldChange(index, 'startDate', e.target.value)}
+              />
+            </div>
+            <div className='input'>
+              <h3>End Date</h3>
+              <input
+                type="date"
+                placeholder='End Date'
+                value={field.endDate}
+                onChange={(e) => handleFieldChange(index, 'endDate', e.target.value)}
               />
             </div>
             {index === fields.length - 1 ? (

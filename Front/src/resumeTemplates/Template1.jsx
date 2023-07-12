@@ -8,6 +8,7 @@ function Template() {
   const about = useSelector((state) => state.about.about);
   const skills = useSelector((state) => state.skills.skills);
   const experience = useSelector((state) => state.experience.fields);
+  const education = useSelector((state) => state.education.fields);
 
   const downloadPDF = () => {
     const element = document.getElementById('template1');
@@ -41,18 +42,18 @@ function Template() {
             <div className="line">
               <div className="color"></div>
             </div>
-              <p>{about}</p>
+            <p>{about}</p>
           </div>
           <div className="skills">
             <h3 contentEditable>SKILLS</h3>
             <div className="line">
               <div className="color"></div>
-                </div>
-              <ul className="skills-list">
-                {skills.map((skill, index) => (
-                  <li key={index}>{skill}</li>
-                ))}
-              </ul>
+            </div>
+          <ul className="skills-list">
+            {skills.map((skill, index) => (
+              <li key={index}>{skill}</li>
+            ))}
+          </ul>
           </div>
           <div className="certifications">
             <h3 contentEditable>CERTIFICATIONS</h3>
@@ -66,13 +67,16 @@ function Template() {
             <h3 contentEditable>WORK HISTORY</h3>
             <div className="line">
               <div className="color"></div>
+            </div>
+            {experience.map((element, index) => (
+              <div key={index} className='gap'>
+                <h3>{element.role}</h3>
+                <h5>{element.company}</h5>
+                {element.startDate ?
+                  <h5>{element.startDate + " " + "to" + " "} {element.endDate}</h5> : ""
+                }
               </div>
-              {experience.map((element, index) => (
-                <div key={index}>
-                  <h3>{element.role}</h3>
-                  <h5>{element.company}</h5>
-                </div>
-              ))}
+            ))}
           </div>
 
           <div className="education">
@@ -80,6 +84,15 @@ function Template() {
             <div className="line">
               <div className="color"></div>
             </div>
+            {education.map((element, index) => (
+              <div key={index} className='gap'>
+                <h3>{element.level}</h3>
+                <h5>{element.organization}</h5>
+                {element.yearOfPassing ?
+                  <h5>{element.yearOfPassing}</h5> : ""
+                }
+              </div>
+            ))}
           </div>
         </div>
       </div>

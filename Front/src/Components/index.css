@@ -78,7 +78,7 @@ ul {
   border-radius: 30px;
   margin: 4rem;
   background-color: #fff;
-  box-shadow: 5px 5px 5px gray;
+  box-shadow: 5px 5px 5px #999;
 }
 
 .sidebar .top{
@@ -262,6 +262,9 @@ text-align: start;
   width: 90%;
   height: 80%;
   
+}
+.gap{
+  margin-bottom: 10px;
 }
 
 

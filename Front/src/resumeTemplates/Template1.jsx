@@ -7,8 +7,9 @@ function Template() {
   const data = useSelector((state) => state.details);
   const about = useSelector((state) => state.about.about);
   const skills = useSelector((state) => state.skills.skills);
-  const experience = useSelector((state) => state.experience.fields);
   const education = useSelector((state) => state.education.fields);
+  const experience = useSelector((state) => state.experience.fields);
+  const certificates = useSelector((state) => state.certification.certificates)
   const isDownloading = useSelector((state) => state.download.isDownloading)
 
   const downloadPDF = () => {
@@ -38,7 +39,7 @@ function Template() {
         </div>
         <div className="template1-info">
           <h1>{data.name}</h1>
-          <h4>{data.roles.join(' | ')}</h4>
+          <h4>{data.role}</h4>
           <h4>Total-Experience: {data.totalExperience}</h4>
         </div>
       </div>
@@ -67,6 +68,14 @@ function Template() {
             <div className="line">
               <div className="color"></div>
             </div>
+            {
+              certificates.map((certificate , index) => {
+                return(
+                  <h4 key={index}>{certificate}</h4>
+                )
+              })
+            }
+
           </div>
         </div>
         <div className="template1-right">

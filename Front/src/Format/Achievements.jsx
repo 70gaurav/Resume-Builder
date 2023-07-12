@@ -1,7 +1,7 @@
 import React from 'react'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import { addCertificationInput , certificationInputHandler , removeCertificationInput } from "../Features/certificationSlice"
+import { addCertificationInput, certificationInput, removeCertificationInput } from "../Features/certificationSlice"
 import { useDispatch, useSelector } from 'react-redux';
 
 function Achievements() {
@@ -23,14 +23,14 @@ function Achievements() {
 
   const handleSkillsInputChange = (index, e) => {
     const { value } = e.target
-    dispatch(certificationInputHandler({ index, value }));
+    dispatch(certificationInput({ index, value }));
   };
   return (
     <div id='skills-main' >
       <h3>Add Certificates</h3>
       {data.map((certificate, index) => (
 
-        <div className="input" >
+        <div className="input" key={index}>
           <input
             type="text"
             placeholder="Certification In"

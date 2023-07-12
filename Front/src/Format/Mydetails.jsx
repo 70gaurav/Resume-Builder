@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 // import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import { imageHandler, nameHandler, roleHandler, experienceHandler, addRoleInput, removeRoleInput } from '../Features/detaisSlice';
+import { imageHandler, nameHandler, roleHandler, experienceHandler } from '../Features/detaisSlice';
 
 function Mydetails() {
   const dispatch = useDispatch();
@@ -61,7 +61,7 @@ function Mydetails() {
           <a href="#" onClick={handleAddRoleInput}>
             <AddCircleOutlineIcon />
           </a> */}
-           <input type="text" placeholder="Enter Your Job Role" onChange={(e) => { dispatch(roleHandlerHandler(e.target.value)); }} />
+           <input type="text" placeholder="Enter Your Job Role" onChange={(e) => { dispatch(roleHandler(e.target.value)); }} />
         </div>
         <div className="input">
           <h3>Experience</h3>

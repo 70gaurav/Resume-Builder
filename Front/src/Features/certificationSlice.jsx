@@ -22,6 +22,6 @@ export const certificationSlice = createSlice({
     }
 })
 
-export const {addCertificationInput , certificationInputHandler , removeCertificationInput} = certificationSlice.actions
+export const {addCertificationInput , certificationInput , removeCertificationInput} = certificationSlice.actions
 
 export default certificationSlice.reducer

@@ -7,7 +7,7 @@ export const detailSlice = createSlice({
   initialState: {
     image: dummy,
     name: "Name",
-    roles: ["Role"], 
+    role: "role", 
     totalExperience: ""
   },
   
@@ -20,14 +20,14 @@ export const detailSlice = createSlice({
       state.name = action.payload;
     },
     roleHandler: (state, action) => {
-      state.roles[action.payload.index] = action.payload.value;
+      state.role = action.payload;
     },
-    addRoleInput: (state) => {
-      state.roles.push("");
-    },
-    removeRoleInput: (state, action) => {
-      state.roles.splice(action.payload, 1); 
-    },
+    // addRoleInput: (state) => {
+    //   state.roles.push("");
+    // },
+    // removeRoleInput: (state, action) => {
+    //   state.roles.splice(action.payload, 1); 
+    // },
     experienceHandler: (state, action) => {
       state.totalExperience = action.payload;
     }

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+// import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+// import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import { imageHandler, nameHandler, roleHandler, experienceHandler, addRoleInput, removeRoleInput } from '../Features/detaisSlice';
 
 function Mydetails() {
@@ -10,20 +10,18 @@ function Mydetails() {
     return state.details;
   });
 
-  // console.log(data);
+  // const handleAddRoleInput = () => {
+  //   dispatch(addRoleInput());
+  // };
 
-  const handleAddRoleInput = () => {
-    dispatch(addRoleInput());
-  };
+  // const handleRemoveRoleInput = (index) => {
+  //   dispatch(removeRoleInput(index));
+  // };
 
-  const handleRemoveRoleInput = (index) => {
-    dispatch(removeRoleInput(index));
-  };
-
-  const handleRoleInputChange = (index, e) => {
-    const { value } = e.target
-    dispatch(roleHandler({ index, value }));
-  };
+  // const handleRoleInputChange = (index, e) => {
+  //   const { value } = e.target
+  //   dispatch(roleHandler({ index, value }));
+  // };
 
   return (
     <div className='details-parent'>
@@ -42,7 +40,7 @@ function Mydetails() {
         </div>
         <div id="role" className="input">
           <h3>Role</h3>
-          {data.roles.map((role, index) => (
+          {/* {data.roles.map((role, index) => (
             
               <div className="role-input-container">
                 <input
@@ -62,11 +60,12 @@ function Mydetails() {
           ))}
           <a href="#" onClick={handleAddRoleInput}>
             <AddCircleOutlineIcon />
-          </a>
+          </a> */}
+           <input type="text" placeholder="Enter Your Job Role" onChange={(e) => { dispatch(roleHandlerHandler(e.target.value)); }} />
         </div>
         <div className="input">
           <h3>Experience</h3>
-          <input type="text" placeholder="Year" onChange={(e) => { dispatch(experienceHandler(e.target.value)); }} />
+          <input type="text" placeholder="Year" onChange={(e) => {dispatch(experienceHandler(e.target.value));}}/>
         </div>
       </form>
     </div>

@@ -142,10 +142,12 @@ function Format() {
         </div>
       </div>
 
-      <div className="section">{renderComponent()}</div>
+     <div className='content'>
+     <div className="section">{renderComponent()}</div>
       <div className="side-template">
         <Template />
       </div>
+     </div>
     </div>
   );
 }

@@ -74,11 +74,12 @@ ul {
 
 
 
-.sidebar {
+.sidebar{
   border-radius: 30px;
   margin: 4rem;
   background-color: #fff;
 }
+
 .sidebar .top{
   margin: 2rem 0;
 }
@@ -88,7 +89,9 @@ ul {
 
 .format {
   display: flex;
-  background-color: #4bccef;
+  background-color: #FFD9C0;
+  height: 100vh;
+  align-items: center;
 }
 
 .sidebar h1 {
@@ -96,11 +99,15 @@ ul {
 }
 
 .section {
-  width: 40%;
+  width: 42%;
+  padding: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:#56c9aa ;
+  background-color:#8CC0DE ;
+  border-top-left-radius: 23px;
+  border-bottom-left-radius: 23px;
+  overflow-y: auto;
 }
 
 form img {
@@ -111,13 +118,18 @@ form img {
 }
 .details-parent form .input h3{
 width: 50%;
+text-align: start;
 }
 
 .input {
   margin: 1rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
+
+
+
 
 .input input {
   width: 300px;
@@ -129,33 +141,6 @@ width: 50%;
   transition: border-color 0.3s ease;
 }
 
-.input .role {
-  width: 100px;
-  margin-left: 10px;
-  
-}
-#role{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-
-.role-input-container {
-  display: flex;
-  align-items: center;
-  
-}
-.role-input-container input{
-  width: 24%;
-  margin: 10px;
-}
-
-.role {
-  width: 80%;
-  padding-right: 40px;
-}
 
 
 .remove:hover {
@@ -181,7 +166,11 @@ width: 50%;
 
 .side-template {
   width: 40%;
+  border-radius: 23px;
   background-color: #fff;
+  position: absolute;
+  left: 46%;
+  height: 80%;
 }
 
 .start{
@@ -253,6 +242,13 @@ width: 50%;
 
 #image-input{
   flex-direction: column;
+}
+
+.content {
+  display: flex;
+  width: 90%;
+  height: 80%;
+  
 }
 
 

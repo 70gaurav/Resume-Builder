@@ -7,7 +7,7 @@ export const detailSlice = createSlice({
   initialState: {
     image: dummy,
     name: "Name",
-    role: "role", 
+    role: "Role", 
     totalExperience: ""
   },
   

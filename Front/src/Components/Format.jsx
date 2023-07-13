@@ -2,22 +2,51 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Mydetails from '../Format/Mydetails';
 import Education from '../Format/Education';
+import Typewriter from 'typewriter-effect';
+import html2pdf from 'html2pdf.js';
 import Experience from '../Format/Experience';
 import Skills from '../Format/Skills';
 import Achievements from '../Format/Achievements';
 import About from '../Format/About';
 import Template from '../resumeTemplates/Template1';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import HomeIcon from '@mui/icons-material/Home';
+import { useSelector , useDispatch } from 'react-redux';
+import {startDownload , finishDownload} from "../Features/downloadSlice"
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import InfoIcon from '@mui/icons-material/Info';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
 import SchoolIcon from '@mui/icons-material/School';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
+import FileDownloadDoneIcon from '@mui/icons-material/FileDownloadDone';
 
 function Format() {
+
+  const dispatch = useDispatch()
+  const download = useSelector((state) => state.download.isDownloading)
+  const name = useSelector((state) => state.details.name)
+
   const [selectedOption, setSelectedOption] = useState(null);
+
+  const downloadPDF = () => {
+    dispatch(startDownload());
+
+    const element = document.getElementById("template1");
+    const opt = {
+      margin: 0,
+      filename: `${name}'s resume.pdf`,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+    };
+
+    html2pdf().set(opt).from(element).save();
+
+    setTimeout(() => {
+      dispatch(finishDownload());
+    }, 2000); // Assuming the download takes approximately 2 seconds
+  };
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
@@ -39,7 +68,20 @@ function Format() {
         return <Achievements />;
 
       default:
-        return <div>Select a section to edit</div>;
+        return <div className="type">
+        <Typewriter
+          options={{
+            loop: true,
+          }}
+          onInit={(typewriter) => {
+            typewriter
+              .typeString("<h1>Select a <span>SECTION</span> <br/> to <span>EDIT</span>.</h1>")
+              .pauseFor(1000)
+              .deleteAll()
+              .start();
+          }}
+        />
+      </div>
     }
   };
 
@@ -47,14 +89,12 @@ function Format() {
     <div className="format">
       
       <div className="sidebar">
+                <Link to="/create" className="home">
+                  <HomeIcon fontSize="large" />
+                  <span className="name">Home</span>
+                </Link>
         <div>
           <ul>
-            <li>
-              <Link to="/create" className="back">
-                <HomeIcon fontSize="large" />
-                <span className="name">Home</span>
-              </Link>
-            </li>
             <li>
               <a
                 href="#"
@@ -76,7 +116,6 @@ function Format() {
                   e.preventDefault();
                   handleOptionClick('About Me');
                 }}
-                data-name="About Me"
               >
                 <InfoIcon fontSize="large" />
                 <span className="name">About Me</span>
@@ -90,7 +129,6 @@ function Format() {
                   e.preventDefault();
                   handleOptionClick('Skills & Proficiencies');
                 }}
-                data-name="Skills & Proficiencies"
               >
                 <LaptopMacIcon fontSize="large" />
                 <span className="name">Skills & Proficiencies</span>
@@ -104,7 +142,7 @@ function Format() {
                   e.preventDefault();
                   handleOptionClick('Work Experience');
                 }}
-                data-name="Work Experience"
+                
               >
                 <WorkHistoryIcon fontSize="large" />
                 <span className="name">Work Experience</span>
@@ -140,6 +178,14 @@ function Format() {
             </li>
           </ul>
         </div>
+          <a href="" onClick={(e) => {e.preventDefault() ; downloadPDF()}}className='home'>
+          {
+            download ? <FileDownloadDoneIcon fontSize='large'/>
+            : <DownloadForOfflineIcon fontSize='large'/> 
+          }
+          <span className="name">Download</span>
+
+          </a>
       </div>
 
      <div className='content'>

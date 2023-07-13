@@ -19,7 +19,7 @@ ul {
   margin: 0 3.35rem;
 }
 
-.sidebar ul li a {
+.sidebar a {
   display: inline-block;
   margin: 5px;
   border-radius: 20px;
@@ -31,17 +31,17 @@ ul {
   z-index: 1;
 }
 
-.sidebar ul li a.selected {
+.sidebar  a.selected {
   color: #56c9aa;
 }
 
-.sidebar ul li a:hover {
+.sidebar  a:hover {
   color: #56c9aa;
 }
 
 
 
-.sidebar ul li a span.name {
+.sidebar a span.name {
   position: absolute;
   display: none;
   top: 15px;
@@ -54,7 +54,7 @@ ul {
   transition: all 0.7s ease-in-out;
 }
 
-.sidebar ul li a:hover span.name {
+.sidebar  a:hover span.name {
   display: block;
   left: 100%;
   animation: slideName 0.3s ease-in-out forwards;
@@ -74,16 +74,20 @@ ul {
 
 
 
-.sidebar{
+.sidebar div {
   border-radius: 30px;
-  margin: 4rem;
+  margin: 2rem 4rem;
   background-color: #fff;
   box-shadow: 5px 5px 5px #999;
 }
-
-.sidebar .top{
-  margin: 2rem 0;
+.sidebar .home{
+  background-color: #fff;
+  color: #8CC0DE;
+  margin: 0 4rem;
+  width: 65px;
+  text-align: center;
 }
+
 .logo span {
   color: #56c9aa;
 }
@@ -210,11 +214,7 @@ text-align: start;
   margin: 2rem;
 }
 
-.top a {
-  color: black;
-  
-  border-radius: 50%;
-}
+
 
 .anchors {
   display: flex;
@@ -257,6 +257,14 @@ text-align: start;
   flex-direction: column;
 }
 
+#skills-main h3{
+  text-align: center;
+}
+
+.about-me h3{
+  text-align: center;
+}
+
 .content {
   display: flex;
   width: 90%;
@@ -265,6 +273,10 @@ text-align: start;
 }
 .gap{
   margin-bottom: 10px;
+}
+
+.section .type h1 span{
+  color: #fff;
 }
 
 

@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import detailReducer from "../Features/detaisSlice"
+import detailReducer from "../Features/detailsSlice"
 import aboutReducer from "../Features/aboutSlice";
 import skillsReducer from "../Features/skillsSlice";
 import registerReducer from "../Features/registerSlice";

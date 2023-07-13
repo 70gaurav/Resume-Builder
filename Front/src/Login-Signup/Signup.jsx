@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
 import { nameHandler , emailHandler ,passwordHandler } from '../Features/signupSlice'
 import axios from "axios"
 

@@ -1,46 +1,57 @@
 import React from 'react'
-import Typewriter from 'typewriter-effect';
+import { useSelector, useDispatch } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { nameHandler , emailHandler ,passwordHandler } from '../Features/signupSlice'
+import axios from "axios"
+
+
 
 
 function Signup() {
+
+    const { name , email, password } = useSelector(state => state.signup)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+   function submitHandler (e) {
+    e.preventDefault()
+    axios.post("http://localhost:3000/register", {
+        username: name,
+        email: email,
+        password: password,
+    })
+        .then((response) => {
+            if (response.data.error) {
+                console.log(response.data.error)
+                // alert("email already exist")
+            }
+            else {
+                alert("Registered Sucessfully !")
+            }
+        })
+   }
+
     return (
         <div className='signup'>
             <div className='form-main'>
-            <div>
-        {/* <div className="type">
-          <Typewriter
-            options={{
-              loop: true,
-            }}
-            onInit={(typewriter) => {
-              typewriter
-                .typeString("<h1>RESU<span>MIFY</span></h1>")
-                .pauseFor(1000)
-                .deleteAll()
-                .typeString("<h1>CREATE YOUR <br/><span>RESUME</span> NOW <span>!</span></h1>")
-                .start();
-            }}
-          />
-        </div> */}
-        </div>
-                <form action="">
-                <div>
-                        <div class="blank">
-                            <input type="text" required="required"/>
+                <form  onSubmit={submitHandler}>
+                    <div>
+                        <div className="blank">
+                            <input type="text" required="required" value={name} onChange={(e) => dispatch(nameHandler(e.target.value))} />
                             <span>USERNAME</span>
                         </div>
                     </div>
 
                     <div>
-                        <div class="blank">
-                            <input type="email" required="required"/>
+                        <div className="blank">
+                            <input type="email" required="required" value={email} onChange={(e) => dispatch(emailHandler(e.target.value))} />
                             <span>E-MAIL</span>
                         </div>
                     </div>
 
                     <div>
-                        <div class="blank">
-                            <input type="password" required="required"/>
+                        <div className="blank">
+                            <input type="password" required="required" value={password} onChange={(e) => dispatch(passwordHandler(e.target.value))} />
                             <span>PASSWORD</span>
                         </div>
                     </div>
@@ -51,9 +62,9 @@ function Signup() {
             </div>
 
         </div>
-     
 
-  )
+
+    )
 }
 
 export default Signup

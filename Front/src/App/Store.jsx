@@ -8,11 +8,13 @@ import educationReducer from "../Features/educationSlice"
 import certificationReducer from "../Features/certificationSlice";
 import downloadReducer from "../Features/downloadSlice";
 import fontReducer from "../Features/fontSlice";
+import signupReducer from "../Features/signupSlice";
 
 
 export default configureStore({
     reducer : {
         register : registerReducer,
+        signup : signupReducer,
         details : detailReducer,
         about : aboutReducer,
         skills : skillsReducer,

@@ -7,6 +7,7 @@ import experienceReducer from "../Features/experienceSlice"
 import educationReducer from "../Features/educationSlice"
 import certificationReducer from "../Features/certificationSlice";
 import downloadReducer from "../Features/downloadSlice";
+import fontReducer from "../Features/fontSlice";
 
 
 export default configureStore({
@@ -19,5 +20,6 @@ export default configureStore({
         education : educationReducer,
         certification: certificationReducer,
         download: downloadReducer,
+        font : fontReducer
     }
 })

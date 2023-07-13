@@ -20,6 +20,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
 import FileDownloadDoneIcon from '@mui/icons-material/FileDownloadDone';
+import Font from '../Format/Font';
 
 function Format() {
 
@@ -194,6 +195,7 @@ function Format() {
         <Template />
       </div>
      </div>
+     {/* <Font/> */}
     </div>
   );
 }

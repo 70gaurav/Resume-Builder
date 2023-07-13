@@ -10,11 +10,14 @@ function Template() {
   const experience = useSelector((state) => state.experience.fields);
   const certificates = useSelector((state) => state.certification.certificates)
   const isDownloading = useSelector((state) => state.download.isDownloading)
+  const font = useSelector((state) => state.font.font)
 
-
+  const styles = {
+   fontFamily:font 
+  };
 
   return (
-    <div id="template1">
+    <div id="template1" style={styles}>
       <div className="template1-details">
         <div className="template1-image">
           <img src={data.image} alt="" />

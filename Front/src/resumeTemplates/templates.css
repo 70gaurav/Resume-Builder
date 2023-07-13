@@ -33,10 +33,18 @@
     background-color: #000;
     height: 3px;
   }
+  :root {
+    --custom-font: 'Roboto Slab', serif;
+  }
   
   .template1-main {
     display: flex;
+    font-family: var(--custom-font);
   }
+  
+  /* .template1-main {
+    display: flex;
+  } */
   
   .template1-left,
   .template1-right {

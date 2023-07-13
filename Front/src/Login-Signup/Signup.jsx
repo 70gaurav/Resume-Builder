@@ -9,14 +9,14 @@ import axios from "axios"
 
 function Signup() {
 
-    const { name , email, password } = useSelector(state => state.signup)
+    const { username , email, password } = useSelector(state => state.signup)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
    function submitHandler (e) {
     e.preventDefault()
     axios.post("http://localhost:3000/register", {
-        username: name,
+        username: username,
         email: email,
         password: password,
     })
@@ -37,7 +37,7 @@ function Signup() {
                 <form  onSubmit={submitHandler}>
                     <div>
                         <div className="blank">
-                            <input type="text" required="required" value={name} onChange={(e) => dispatch(nameHandler(e.target.value))} />
+                            <input type="text" required="required" value={username} onChange={(e) => dispatch(nameHandler(e.target.value))} />
                             <span>USERNAME</span>
                         </div>
                     </div>

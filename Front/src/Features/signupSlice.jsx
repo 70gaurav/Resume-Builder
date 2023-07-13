@@ -4,7 +4,7 @@ export const signupSlice = createSlice({
     name : "signup" , 
 
     initialState : {
-        name : "" ,
+        username : "" ,
         email : "" , 
         password : ""
     },

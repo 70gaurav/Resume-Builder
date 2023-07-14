@@ -12,7 +12,7 @@ function Signup() {
     const { username , email, password } = useSelector(state => state.signup)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-
+    console.log(username)
    function submitHandler (e) {
     e.preventDefault()
     axios.post("http://localhost:3000/register", {
@@ -23,7 +23,7 @@ function Signup() {
         .then((response) => {
             if (response.data.error) {
                 console.log(response.data.error)
-                // alert("email already exist")
+                alert("email already exist")
             }
             else {
                 alert("Registered Sucessfully !")

@@ -11,7 +11,7 @@ export const signupSlice = createSlice({
 
     reducers : {
         nameHandler : (state , action) => {
-            state.name = action.payload
+            state.username = action.payload
         },
 
         emailHandler : (state , action) => {

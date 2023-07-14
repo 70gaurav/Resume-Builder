@@ -9,12 +9,14 @@ import certificationReducer from "../Features/certificationSlice";
 import downloadReducer from "../Features/downloadSlice";
 import fontReducer from "../Features/fontSlice";
 import signupReducer from "../Features/signupSlice";
+import loginReducer from "../Features/loginSlice";
 
 
 export default configureStore({
     reducer : {
         register : registerReducer,
         signup : signupReducer,
+        login : loginReducer,
         details : detailReducer,
         about : aboutReducer,
         skills : skillsReducer,

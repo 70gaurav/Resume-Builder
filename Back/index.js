@@ -18,10 +18,10 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("Connected to Database");
+    console.log("Connected to MongoDB");
   })
   .catch((error) => {
-    console.error("Database error", error);
+    console.error("Error connecting to MongoDB:", error);
   });
 
 app.post("/register", (req, res) => {
@@ -55,12 +55,11 @@ app.post("/login", async (req, res) => {
     const user = await User.findOne({ email });
     if (user) {
       const isMatch = await bcrypt.compare(password, user.password);
-
       if (isMatch) {
+        // Generate a JWT token
         const token = jwt.sign({ email: user.email }, "your-secret-key", {
-          expiresIn: "1h",
+          expiresIn: "1h", // Token expiration time
         });
-
         res.cookie("token", token, { httpOnly: true, secure: true, sameSite: 'strict' });
         res.status(200).json({ message: "Login successful", token });
 
@@ -74,6 +73,8 @@ app.post("/login", async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
+
+
 
 app.get('/user', (req, res) => {
   const { email } = req.query;
@@ -92,12 +93,6 @@ app.get('/user', (req, res) => {
 });
 
 
-
-
-
-
-
-
 app.listen(3000, () => {
-  console.log("See you at port  3000");
+  console.log("Se you at 3000");
 });

@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-
+const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
@@ -20,10 +19,10 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
+  resumes: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Resume',
+  }],
 });
 
 const User = mongoose.model('User', userSchema);

@@ -1,52 +1,57 @@
-
 import bcrypt from "bcrypt"
-import  jwt  from "jsonwebtoken";
+import jwt from "jsonwebtoken"
 import User from "../models/usersSchema.js"
 
-exports.signup = (req, res) => {
+exports.signup = async (req, res) => {
   const { username, email, password } = req.body;
 
-  bcrypt.hash(password, 10, (err, hashedPassword) => {
-    if (err) {
-      res.status(500).json({ error: 'Internal Server Error' });
-    } else {
-      const newUser = new User({
-        username,
-        email,
-        password: hashedPassword,
-      });
-
-      newUser.save((err, user) => {
-        if (err) {
-          res.status(400).json({ error: 'Failed to create user' });
-        } else {
-          res.status(201).json({ message: 'User created successfully' });
-        }
-      });
+  try {
+    // Check if the email is already registered
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ error: 'User already exists' });
     }
-  });
+
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create a new user
+    const newUser = new User({
+      username,
+      email,
+      password: hashedPassword,
+    });
+
+    // Save the user to the database
+    await newUser.save();
+
+    res.status(201).json({ message: 'User created successfully' });
+  } catch (err) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 };
 
-exports.login = (req, res) => {
+exports.login = async (req, res) => {
   const { email, password } = req.body;
 
-  User.findOne({ email }, (err, user) => {
-    if (err) {
-      res.status(500).json({ error: 'Internal Server Error' });
-    } else if (!user) {
-      res.status(401).json({ error: 'Invalid credentials' });
-    } else {
-      bcrypt.compare(password, user.password, (err, isMatch) => {
-        if (err) {
-          res.status(500).json({ error: 'Internal Server Error' });
-        } else if (!isMatch) {
-          res.status(401).json({ error: 'Invalid credentials' });
-        } else {
-          const token = jwt.sign({ userId: user._id }, 'YOUR_SECRET_KEY', { expiresIn: '1h' });
-          res.json({ token });
-        }
-      });
+  try {
+    // Find the user by email
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(401).json({ error: 'Invalid credentials' });
     }
-  });
-};
 
+    // Compare the password
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
+
+    // Generate a JWT token
+    const token = jwt.sign({ userId: user._id }, 'YOUR_SECRET_KEY');
+
+    res.json({ token });
+  } catch (err) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};

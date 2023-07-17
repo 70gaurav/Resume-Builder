@@ -6,10 +6,16 @@ export const signup = async (req, res) => {
   const { username, email, password } = req.body;
 
   try {
-    // Check if the email is already registered
-    const existingUser = await User.findOne({ email });
+    // Check if the username is already taken
+    const existingUser = await User.findOne({ username });
     if (existingUser) {
-      return res.status(400).json({ error: 'User already exists' });
+      return res.status(400).json({ error: 'Username already exists' });
+    }
+
+    // Check if the email is already registered
+    const existingEmail = await User.findOne({ email });
+    if (existingEmail) {
+      return res.status(400).json({ error: 'Email already exists' });
     }
 
     // Hash the password
@@ -27,6 +33,7 @@ export const signup = async (req, res) => {
 
     res.status(201).json({ message: 'User created successfully' });
   } catch (err) {
+    console.error(err);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
@@ -52,6 +59,7 @@ export const login = async (req, res) => {
 
     res.json({ token });
   } catch (err) {
+    console.error(err);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };

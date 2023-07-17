@@ -1,12 +1,12 @@
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import authRoutes from './routes/authRoutes';
-import resumeRoutes from './routes/resumeRoutes';
+import authRoutes from './routes/authRoutes.js';
+import resumeRoutes from './routes/resumeRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const MONGODB_URI = 'YOUR_MONGODB_URI';
+const MONGODB_URI = 'mongodb+srv://gaurav:resume@cluster0.83hhms8.mongodb.net/?retryWrites=true&w=majority';
 
 app.use(cors());
 app.use(express.json());

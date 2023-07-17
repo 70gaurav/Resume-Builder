@@ -1,4 +1,4 @@
-import Resume from '../models/Resume';
+import Resume from '../models/resumeSchema.js';
 
 export const createResume = async (req, res) => {
   // Extract resume data from the request body

@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import User from '../models/User';
+import User from '../models/usersSchema.js';
 
 export default (req, res, next) => {
   // Get the token from the request headers

@@ -15,7 +15,7 @@ function Signup() {
     console.log(username)
    function submitHandler (e) {
     e.preventDefault()
-    axios.post("http://localhost:3000/register", {
+    axios.post("http://localhost:3000/signup", {
         username: username,
         email: email,
         password: password,
@@ -24,6 +24,9 @@ function Signup() {
             if (response.data.error) {
                 console.log(response.data.error)
                 alert("email already exist")
+                dispatch(nameHandler(""))
+                dispatch(emailHandler(""))
+                dispatch(passwordHandler(""))
             }
             else {
                 alert("Registered Sucessfully !")

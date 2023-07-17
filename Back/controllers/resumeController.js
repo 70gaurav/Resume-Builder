@@ -1,6 +1,6 @@
-import Resume from "../models/resumeSchema"
+import Resume from '../models/Resume';
 
-exports.createResume = async (req, res) => {
+export const createResume = async (req, res) => {
   // Extract resume data from the request body
   const { title, content } = req.body;
 
@@ -21,7 +21,7 @@ exports.createResume = async (req, res) => {
   }
 };
 
-exports.updateResume = async (req, res) => {
+export const updateResume = async (req, res) => {
   const { id } = req.params;
   const { title, content } = req.body;
 
@@ -45,7 +45,7 @@ exports.updateResume = async (req, res) => {
   }
 };
 
-exports.deleteResume = async (req, res) => {
+export const deleteResume = async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -64,7 +64,7 @@ exports.deleteResume = async (req, res) => {
   }
 };
 
-exports.getResume = async (req, res) => {
+export const getResume = async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -80,7 +80,7 @@ exports.getResume = async (req, res) => {
   }
 };
 
-exports.getAllResumes = async (req, res) => {
+export const getAllResumes = async (req, res) => {
   try {
     // Find all resumes
     const resumes = await Resume.find();

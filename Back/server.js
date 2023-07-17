@@ -1,8 +1,8 @@
-import  express  from 'express';
-import cors from "cors"
+import express from 'express';
+import cors from 'cors';
 import mongoose from 'mongoose';
-import authRoutes from "./routes/authRoutes"
-const resumeRoutes = require('./routes/resumeRoutes');
+import authRoutes from './routes/authRoutes';
+import resumeRoutes from './routes/resumeRoutes';
 
 const app = express();
 const PORT = process.env.PORT || 3000;

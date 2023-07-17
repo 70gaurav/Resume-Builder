@@ -1,7 +1,7 @@
-import jwt from "jsonwebtoken"
-import User from "../models/usersSchema.js"
+import jwt from 'jsonwebtoken';
+import User from '../models/User';
 
-module.exports = (req, res, next) => {
+export default (req, res, next) => {
   // Get the token from the request headers
   const token = req.headers.authorization;
 

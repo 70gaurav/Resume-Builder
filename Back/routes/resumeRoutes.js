@@ -1,5 +1,11 @@
 import express from 'express';
-import { createResume, updateResume, deleteResume, getResume, getAllResumes } from '../controllers/resumeController.js';
+import {
+  createResume,
+  updateResume,
+  deleteResume,
+  getResume,
+  getAllResumes,
+} from '../controllers/resumeController.js';
 import authMiddleware from '../middleware/authMiddleware.js';
 
 const router = express.Router();

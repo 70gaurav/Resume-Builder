@@ -1,14 +1,19 @@
+
 import Resume from '../models/resumeSchema.js';
 
 export const createResume = async (req, res) => {
   // Extract resume data from the request body
-  const { title, content } = req.body;
+  const { name, about, skills, experience, education, achievements } = req.body;
 
   try {
     // Create a new resume
     const newResume = new Resume({
-      title,
-      content,
+      name,
+      about,
+      skills,
+      experience,
+      education,
+      achievements,
       user: req.user._id, // Assuming you have attached the authenticated user to the request using the authMiddleware
     });
 
@@ -23,7 +28,7 @@ export const createResume = async (req, res) => {
 
 export const updateResume = async (req, res) => {
   const { id } = req.params;
-  const { title, content } = req.body;
+  const { name, about, skills, experience, education, achievements } = req.body;
 
   try {
     // Find the resume by ID
@@ -33,8 +38,12 @@ export const updateResume = async (req, res) => {
     }
 
     // Update the resume data
-    resume.title = title;
-    resume.content = content;
+    resume.name = name;
+    resume.about = about;
+    resume.skills = skills;
+    resume.experience = experience;
+    resume.education = education;
+    resume.achievements = achievements;
 
     // Save the updated resume to the database
     await resume.save();

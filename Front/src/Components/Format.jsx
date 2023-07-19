@@ -10,8 +10,8 @@ import Achievements from '../Format/Achievements';
 import About from '../Format/About';
 import Template from '../resumeTemplates/Template1';
 import HomeIcon from '@mui/icons-material/Home';
-import { useSelector , useDispatch } from 'react-redux';
-import {startDownload , finishDownload} from "../Features/downloadSlice"
+import { useSelector, useDispatch } from 'react-redux';
+import { startDownload, finishDownload } from "../Features/downloadSlice"
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import InfoIcon from '@mui/icons-material/Info';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
@@ -21,12 +21,20 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
 import FileDownloadDoneIcon from '@mui/icons-material/FileDownloadDone';
 import Font from '../Format/Font';
+import axios from 'axios';
+
+// Set the base URL for Axios requests to the backend server
+axios.defaults.baseURL = 'http://localhost:3000';
 
 function Format() {
-
-  const dispatch = useDispatch()
-  const download = useSelector((state) => state.download.isDownloading)
-  const name = useSelector((state) => state.details.name)
+  const dispatch = useDispatch();
+  const download = useSelector((state) => state.download.isDownloading);
+  const name = useSelector((state) => state.details.name);
+  const about = useSelector((state) => state.details.about);
+  const skills = useSelector((state) => state.skills.skills);
+  const experience = useSelector((state) => state.experience.experience);
+  const education = useSelector((state) => state.education.education);
+  const achievements = useSelector((state) => state.certification.certificates);
 
   const [selectedOption, setSelectedOption] = useState(null);
 
@@ -47,6 +55,24 @@ function Format() {
     setTimeout(() => {
       dispatch(finishDownload());
     }, 2000); // Assuming the download takes approximately 2 seconds
+
+    // Save resume data to the database
+    const resumeData = {
+      name,
+      about,
+      skills,
+      experience,
+      education,
+      achievements,
+    };
+
+    axios.post('/api/resume', resumeData)
+      .then((response) => {
+        console.log('Resume data saved:', response.data);
+      })
+      .catch((error) => {
+        console.error('Failed to save resume data:', error);
+      });
   };
 
   const handleOptionClick = (option) => {
@@ -67,33 +93,33 @@ function Format() {
         return <Education />;
       case 'Achievements':
         return <Achievements />;
-
       default:
-        return <div className="type">
-        <Typewriter
-          options={{
-            loop: true,
-          }}
-          onInit={(typewriter) => {
-            typewriter
-              .typeString("<h1>Select a <span>SECTION</span> <br/> to <span>EDIT</span>.</h1>")
-              .pauseFor(1000)
-              .deleteAll()
-              .start();
-          }}
-        />
-      </div>
+        return (
+          <div className="type">
+            <Typewriter
+              options={{
+                loop: true,
+              }}
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString("<h1>Select a <span>SECTION</span> <br/> to <span>EDIT</span>.</h1>")
+                  .pauseFor(1000)
+                  .deleteAll()
+                  .start();
+              }}
+            />
+          </div>
+        );
     }
   };
 
   return (
     <div className="format">
-      
       <div className="sidebar">
-                <Link to="/create" className="home">
-                  <HomeIcon fontSize="large" />
-                  <span className="name">Home</span>
-                </Link>
+        <Link to="/create" className="home">
+          <HomeIcon fontSize="large" />
+          <span className="name">Home</span>
+        </Link>
         <div>
           <ul>
             <li>
@@ -143,7 +169,6 @@ function Format() {
                   e.preventDefault();
                   handleOptionClick('Work Experience');
                 }}
-                
               >
                 <WorkHistoryIcon fontSize="large" />
                 <span className="name">Work Experience</span>
@@ -157,7 +182,6 @@ function Format() {
                   e.preventDefault();
                   handleOptionClick('Educational Background');
                 }}
-                data-name="Educational Background"
               >
                 <SchoolIcon fontSize="large" />
                 <span className="name">Educational Background</span>
@@ -171,7 +195,6 @@ function Format() {
                   e.preventDefault();
                   handleOptionClick('Achievements');
                 }}
-                data-name="Achievements"
               >
                 <EmojiEventsIcon fontSize="large" />
                 <span className="name">Achievements</span>
@@ -179,23 +202,18 @@ function Format() {
             </li>
           </ul>
         </div>
-          <a href="" onClick={(e) => {e.preventDefault() ; downloadPDF()}}className='home'>
-          {
-            download ? <FileDownloadDoneIcon fontSize='large'/>
-            : <DownloadForOfflineIcon fontSize='large'/> 
-          }
+        <a href="" onClick={(e) => { e.preventDefault(); downloadPDF(); }} className="home">
+          {download ? <FileDownloadDoneIcon fontSize="large" /> : <DownloadForOfflineIcon fontSize="large" />}
           <span className="name">Download</span>
-
-          </a>
+        </a>
       </div>
 
-     <div className='content'>
-     <div className="section">{renderComponent()}</div>
-      <div className="side-template">
-        <Template />
+      <div className="content">
+        <div className="section">{renderComponent()}</div>
+        <div className="side-template">
+          <Template />
+        </div>
       </div>
-     </div>
-     {/* <Font/> */}
     </div>
   );
 }

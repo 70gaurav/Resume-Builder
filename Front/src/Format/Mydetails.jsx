@@ -25,10 +25,10 @@ function Mydetails() {
 
   return (
     <div className='details-parent'>
-      <div className="anchors">
+      {/* <div className="anchors">
         <a href="">Cancel</a>
         <a href="">Save</a>
-      </div>
+      </div> */}
       <form action="">
         <div className="input" id='image-input'>
           <img src={data.image} alt="" />

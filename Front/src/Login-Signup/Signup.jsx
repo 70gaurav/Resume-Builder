@@ -1,11 +1,15 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { nameHandler, emailHandler, passwordHandler } from '../Features/signupSlice';
+import { toggleHandler } from '../Features/registerSlice';
 import axios from 'axios';
 
 function Signup() {
   const { username, email, password } = useSelector((state) => state.signup);
   const dispatch = useDispatch();
+  const toggle = useSelector((state) => {
+    return state.register.toggle
+  })
 
   function submitHandler(e) {
     e.preventDefault();
@@ -27,6 +31,7 @@ function Signup() {
           dispatch(nameHandler(''));
           dispatch(emailHandler(''));
           dispatch(passwordHandler(''));
+          dispatch(toggleHandler("signin"))
         }
       })
       .catch((error) => {

@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/usersSchema.js';
 
-export default (req, res, next) => {
+export default async (req, res, next) => {
   // Get the token from the request headers
   const token = req.headers.authorization;
 
@@ -14,17 +14,16 @@ export default (req, res, next) => {
     const decodedToken = jwt.verify(token, 'YOUR_SECRET_KEY');
     const userId = decodedToken.userId;
 
-    // Find the user by ID
-    User.findById(userId, (err, user) => {
-      if (err || !user) {
-        return res.status(401).json({ error: 'Unauthorized' });
-      }
+    // Find the user by ID using async/await
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
 
-      // Attach the user object to the request
-      req.user = user;
+    // Attach the user object to the request
+    req.user = user;
 
-      next();
-    });
+    next();
   } catch (err) {
     res.status(401).json({ error: 'Unauthorized' });
   }

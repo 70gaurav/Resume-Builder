@@ -22,9 +22,9 @@ function contactForm() {
           </ul>
           <div className="social">
             <ul >
-              <li><a href="#"> <i class="fa-brands fa-facebook-f" aria-hidden="true"></i> </a> </li>
+              <li><a href="https://github.com/70gaurav"> <i class="fa-brands fa-github" aria-hidden="true"></i> </a> </li>
               <li><a href="#"> <i class="fa-brands fa-twitter" aria-hidden="true"></i> </a> </li>
-              <li><a href="#"> <i class="fa-brands fa-linkedin" aria-hidden="true"></i> </a> </li>
+              <li><a href="https://www.linkedin.com/in/gaurav-kumar-webdev/"> <i class="fa-brands fa-linkedin" aria-hidden="true"></i> </a> </li>
               <li><a href="#"> <i class="fa-brands fa-instagram" aria-hidden="true"></i> </a> </li>
             </ul>
           </div>

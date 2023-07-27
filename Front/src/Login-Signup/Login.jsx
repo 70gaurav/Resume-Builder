@@ -29,17 +29,19 @@ function Login() {
             },
           })
           .then((response) => {
+            const { username } = response.data.user;
             alert('Login successful');
             navigate('/create');
-            localStorage.setItem('name', response.data.name);
+            localStorage.setItem('name', username);
           })
           .catch((error) => {
             console.error(error);
-            
+            alert('Failed to fetch user data');
           });
       })
       .catch((error) => {
         console.error(error);
+        alert('Invalid credentials');
       });
   }
 

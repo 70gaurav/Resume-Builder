@@ -23,7 +23,6 @@ import FileDownloadDoneIcon from '@mui/icons-material/FileDownloadDone';
 import Font from '../Format/Font';
 import axios from 'axios';
 
-// Set the base URL for Axios requests to the backend server
 axios.defaults.baseURL = 'http://localhost:3000';
 
 function Format() {
@@ -66,7 +65,14 @@ function Format() {
       achievements,
     };
 
-    axios.post('/api/resume', resumeData)
+    const token = localStorage.getItem('token');
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    axios.post('/api/resume', resumeData, config)
       .then((response) => {
         console.log('Resume data saved:', response.data);
       })

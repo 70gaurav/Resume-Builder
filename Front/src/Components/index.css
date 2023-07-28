@@ -78,8 +78,10 @@ ul {
 .sidebar div {
   border-radius: 30px;
   margin: 2rem 4rem;
-  background-color: #fff;
-  box-shadow: 5px 5px 5px #999;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #cacaca, #f0f0f0);
+  box-shadow: inset 5px 5px 10px #bebebe,
+   inset -5px -5px 10px #ffffff;
 }
 .sidebar .home{
   background-color: #fff;
@@ -95,7 +97,7 @@ ul {
 
 .format {
   display: flex;
-  background-color: #FFD9C0;
+  background-color: #e0e0e0;
   height: 100vh;
   align-items: center;
 }

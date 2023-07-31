@@ -2,8 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-/* font-family: 'Noto Sans', sans-serif; */
-font-family: 'Roboto Slab', serif ,'Noto Sans'
+  font-family: 'Roboto Slab', serif, 'Noto Sans'
 }
 
 ul {
@@ -32,11 +31,11 @@ ul {
   z-index: 1;
 }
 
-.sidebar  a.selected {
+.sidebar a.selected {
   color: #56c9aa;
 }
 
-.sidebar  a:hover {
+.sidebar a:hover {
   color: #56c9aa;
 }
 
@@ -55,7 +54,7 @@ ul {
   transition: all 0.7s ease-in-out;
 }
 
-.sidebar  a:hover span.name {
+.sidebar a:hover span.name {
   display: block;
   left: 100%;
   animation: slideName 0.3s ease-in-out forwards;
@@ -67,6 +66,7 @@ ul {
   0% {
     left: 0;
   }
+
   100% {
     left: 92%;
   }
@@ -81,9 +81,10 @@ ul {
   border-radius: 50px;
   background: linear-gradient(145deg, #cacaca, #f0f0f0);
   box-shadow: inset 5px 5px 10px #bebebe,
-   inset -5px -5px 10px #ffffff;
+    inset -5px -5px 10px #ffffff;
 }
-.sidebar .home{
+
+.sidebar .home {
   background-color: #fff;
   color: #8CC0DE;
   margin: 0 4rem;
@@ -122,6 +123,7 @@ ul {
 .section-content {
   margin-top: 10px;
 }
+
 .side-template {
   width: 40%;
   border-radius: 23px;
@@ -139,9 +141,10 @@ form img {
   height: 180px;
   width: 180px;
 }
-.details-parent form .input h3{
-width: 50%;
-text-align: start;
+
+.details-parent form .input h3 {
+  width: 50%;
+  text-align: start;
 }
 
 .input {
@@ -164,7 +167,7 @@ text-align: start;
   transition: border-color 0.3s ease;
 }
 
-.experience .input{
+.experience .input {
   flex-direction: column;
 }
 
@@ -193,18 +196,21 @@ text-align: start;
 
 
 
-.start{
+.start {
   background-color: #000;
   height: 100vh;
   color: #fff;
 }
+
 .start a {
   color: #56c9aa;
   text-decoration: none;
 }
-.create{
- padding: 2rem;
+
+.create {
+  padding: 2rem;
 }
+
 .create-new {
   text-align: center;
   border: 1px solid #c5c1c1;
@@ -256,15 +262,15 @@ text-align: start;
   border-radius: 50%;
 }
 
-#image-input{
+#image-input {
   flex-direction: column;
 }
 
-#skills-main h3{
+#skills-main h3 {
   text-align: center;
 }
 
-.about-me h3{
+.about-me h3 {
   text-align: center;
 }
 
@@ -272,16 +278,13 @@ text-align: start;
   display: flex;
   width: 90%;
   height: 80%;
-  
+
 }
-.gap{
+
+.gap {
   margin-bottom: 10px;
 }
 
-.section .type h1 span{
+.section .type h1 span {
   color: #fff;
 }
-
-
-
-

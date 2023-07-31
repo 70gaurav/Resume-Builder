@@ -1,9 +1,16 @@
 import React from 'react'
-import "./contact.css"
+import { useNavigate } from "react-router-dom"
+import home from "../assets/images/home.png"
 
 function contactForm() {
+  const navigate = useNavigate()
+  function clickHandler(e) {
+    e.preventDefault()
+    navigate("/")
+  }
   return (
     <div className="contact">
+      <div className='home'><a href="" onClick={(e) => clickHandler(e)}><img src={home}/></a></div>
       <div className="contact-heading">
         <h1 >Contact Us</h1>
         <h4>Any question or remarks? Just write us a message!</h4>

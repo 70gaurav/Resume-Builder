@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom"
 import home from "../assets/images/home.png"
+import "./register.css"
 
 function contactForm() {
   const navigate = useNavigate()

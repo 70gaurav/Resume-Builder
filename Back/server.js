@@ -42,5 +42,5 @@ app.get('/user', (req, res) => {
     });
 });
 
-app.use('/auth', authRoutes);
+ 
 app.use('/api', resumeRoutes);

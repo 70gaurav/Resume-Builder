@@ -1,6 +1,6 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import './templates.css';
+import React from "react";
+import { useSelector } from "react-redux";
+import "./templates.css";
 
 function Template() {
   const details = useSelector((state) => state.details);
@@ -41,11 +41,11 @@ function Template() {
             <div className="line">
               <div className="color"></div>
             </div>
-            <ul className="skills-list">
+            {skills[0].length>0 &&<ul className="skills-list">
               {skills.map((skill, index) => (
                 <li key={index}>{skill}</li>
               ))}
-            </ul>
+            </ul>}
           </div>
           <div className="certifications">
             <h3 contentEditable>CERTIFICATIONS</h3>
@@ -72,7 +72,7 @@ function Template() {
                     {element.startDate} to {element.endDate}
                   </h5>
                 ) : (
-                  ''
+                  ""
                 )}
               </div>
             ))}
@@ -87,7 +87,7 @@ function Template() {
               <div key={index} className="gap">
                 <h3>{element.level}</h3>
                 <h5>{element.organization}</h5>
-                {element.yearOfPassing ? <h5>{element.yearOfPassing}</h5> : ''}
+                {element.yearOfPassing ? <h5>{element.yearOfPassing}</h5> : ""}
               </div>
             ))}
           </div>

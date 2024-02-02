@@ -1,8 +1,8 @@
-import React from 'react';
-import { emailHandler, passwordHandler } from '../Features/loginSlice';
-import { useSelector, useDispatch } from 'react-redux';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { emailHandler, passwordHandler } from "../Features/loginSlice";
+import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const { email, password } = useSelector((state) => state.login);
@@ -11,38 +11,39 @@ function Login() {
 
   function submitHandler(e) {
     e.preventDefault();
-
-    axios
-      .post('http://localhost:3000/auth/login', {
-        email: email,
-        password: password,
-      })
-      .then((response) => {
-        localStorage.setItem('token', response.data.token);
-        axios
-          .get('http://localhost:3000/user', {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem('token')}`,
-            },
-            params: {
-              email: email,
-            },
-          })
-          .then((response) => {
-            const { username } = response.data.user;
-            alert('Login successful');
-            navigate('/create');
-            localStorage.setItem('name', username);
-          })
-          .catch((error) => {
-            console.error(error);
-            alert('Failed to fetch user data');
-          });
-      })
-      .catch((error) => {
-        console.error(error);
-        alert('Invalid credentials');
-      });
+    navigate('/create')
+    
+    // axios
+    //   .post('http://localhost:3000/auth/login', {
+    //     email: email,
+    //     password: password,
+    //   })
+    //   .then((response) => {
+    //     localStorage.setItem('token', response.data.token);
+    //     axios
+    //       .get('http://localhost:3000/user', {
+    //         headers: {
+    //           Authorization: `Bearer ${localStorage.getItem('token')}`,
+    //         },
+    //         params: {
+    //           email: email,
+    //         },
+    //       })
+    //       .then((response) => {
+    //         const { username } = response.data.user;
+    //         alert('Login successful');
+    //         navigate('/create');
+    //         localStorage.setItem('name', username);
+    //       })
+    //       .catch((error) => {
+    //         console.error(error);
+    //         alert('Failed to fetch user data');
+    //       });
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //     alert('Invalid credentials');
+    //   });
   }
 
   return (
@@ -58,14 +59,24 @@ function Login() {
           <form onSubmit={submitHandler}>
             <div>
               <div className="blank">
-                <input type="email" value={email} required="required" onChange={(e) => dispatch(emailHandler(e.target.value))} />
+                <input
+                  type="email"
+                  value={email}
+                  required="required"
+                  onChange={(e) => dispatch(emailHandler(e.target.value))}
+                />
                 <span>E-MAIL</span>
               </div>
             </div>
 
             <div>
               <div className="blank">
-                <input type="password" value={password} required="required" onChange={(e) => dispatch(passwordHandler(e.target.value))} />
+                <input
+                  type="password"
+                  value={password}
+                  required="required"
+                  onChange={(e) => dispatch(passwordHandler(e.target.value))}
+                />
                 <span>PASSWORD</span>
               </div>
             </div>

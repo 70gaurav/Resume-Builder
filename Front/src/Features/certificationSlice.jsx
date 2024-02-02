@@ -1,27 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const certificationSlice = createSlice({
-    name: "certification",
+  name: "certification",
 
-    initialState: {
-        certificates: [""]
+  initialState: {
+    certificates: [""],
+  },
+
+  reducers: {
+    addCertificationInput: (state) => {
+      state.certificates.push("");
     },
+    certificationInput: (state, action) => {
+      const { index, value } = action.payload;
+      state.certificates[index] = value;
+    },
+    removeCertificationInput: (state, action) => {
+      state.certificates.splice(action.payload, 1);
+    },
+  },
+});
 
-    reducers: {
-        addCertificationInput: (state) => {
-            state.certificates.push("")
-        },
-        certificationInput: (state, action) => {
-            const { index, value } = action.payload;
-            state.certificates[index] = value;
-        },
-        removeCertificationInput: (state, action) => {
-            state.certificates.splice(action.payload, 1);
-        },
+export const {
+  addCertificationInput,
+  certificationInput,
+  removeCertificationInput,
+} = certificationSlice.actions;
 
-    }
-})
-
-export const {addCertificationInput , certificationInput , removeCertificationInput} = certificationSlice.actions
-
-export default certificationSlice.reducer
+export default certificationSlice.reducer;

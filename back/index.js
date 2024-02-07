@@ -9,6 +9,7 @@ app.use(cors())
 app.use(express.json())
 app.use(router)
 
+
 connection
 .then(() => {
     app.listen(4000, () => {

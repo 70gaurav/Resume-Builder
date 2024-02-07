@@ -13,6 +13,10 @@ const userSchema = new Schema({
         type:String,
         required: true
     },
+    resume:{
+        type:String,
+        required: false
+    },
     createDate:{
         type:Date,
         default:Date.now

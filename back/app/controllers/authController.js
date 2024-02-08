@@ -45,7 +45,7 @@ export const login = async (req, res) => {
     }
 
     const token = jwt.sign({ userId: user.id }, "secret_key");
-    res.status(200).send({ message: "Login successful", token, userId: user._id });
+    res.status(200).send({ message: "Login successful", token, data: {userId: user._id,reume: user.resume} });
   } catch (error) {
     return res.status(500).send({ error: "Internal server error" });
   }

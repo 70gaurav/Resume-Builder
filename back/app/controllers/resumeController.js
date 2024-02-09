@@ -20,3 +20,7 @@ export const saveResume = async (req, res) => {
         return res.status(500).send({ error: "Internal server error" });
     }
 };
+
+export const demo = async(req, res) => {
+    res.status(200).send({message: "Hello world"})
+}

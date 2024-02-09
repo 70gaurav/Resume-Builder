@@ -1,6 +1,11 @@
 import User from "../models/User.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { SECRET_KEY } from "../config/config.js";
+
+
+
+
 export const register = async (req, res) => {
   const { userName, email, password } = req.body;
   try {
@@ -44,8 +49,14 @@ export const login = async (req, res) => {
         .send({ error: "Incorrect password Please check the password" });
     }
 
-    const token = jwt.sign({ userId: user.id }, "secret_key");
-    res.status(200).send({ message: "Login successful", token, data: {userId: user._id,reume: user.resume} });
+    const token = jwt.sign({ userId: user.id }, SECRET_KEY);
+    res
+      .status(200)
+      .send({
+        message: "Login successful",
+        token,
+        data: { userId: user._id, reume: user.resume },
+      });
   } catch (error) {
     return res.status(500).send({ error: "Internal server error" });
   }

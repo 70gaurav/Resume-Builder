@@ -1,5 +1,6 @@
 import User from "../models/User.js";
 
+//save resume according to user 
 export const saveResume = async (req, res) => {
     const { id } = req.body;
     try {
@@ -21,6 +22,4 @@ export const saveResume = async (req, res) => {
     }
 };
 
-export const demo = async(req, res) => {
-    res.status(200).send({message: "Hello world"})
-}
+
